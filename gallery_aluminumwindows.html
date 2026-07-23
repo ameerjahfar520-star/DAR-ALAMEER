@@ -5,9 +5,9 @@
   <title>Our Portfolio — Dar Al Ameer Factory</title>
   <meta name="description" content="Browse our complete portfolio: kitchen cabinets, aluminum windows, doors, decorations and more.">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=639204246021963893">
+  <link rel="stylesheet" href="styles.css?v=639204332521503794">
 </head>
-<body>
+<body data-tab="aluminumwindows">
   
 <nav class="navbar">
   <a class="navbar-brand" href="index.html">DAR AL AMEER</a>
@@ -176,17 +176,6 @@
       </div>
 
       <div class="gallery-item AluminumWindows show">
-        <div class="card" onclick="lbOpen('IMG_20230726_144006.jpg')">
-          <div class="card-img-wrap">
-            <img data-src="media/thumb/IMG_20230726_144006.jpg" src="" alt="IMG_20230726_144006" loading="lazy" decoding="async">
-          </div>
-          <div class="card-body">
-            <div class="id-badge">AW-016</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="gallery-item AluminumWindows show">
         <div class="card" onclick="lbOpen('IMG_20230930_183714.jpg')">
           <div class="card-img-wrap">
             <img data-src="media/thumb/IMG_20230930_183714.jpg" src="" alt="IMG_20230930_183714" loading="lazy" decoding="async">
@@ -320,7 +309,7 @@
     document.querySelectorAll('img[data-src]').forEach(img => observer.observe(img));
 
     // Lightbox
-    const imgs = ["IMG_20230930_183714.jpg","IMG_20230930_183755.jpg","IMG_20240212_182109.jpg","IMG_20240218_124004.jpg","IMG_20240218_124031.jpg","IMG_20240505_183320.jpg","IMG_20220831_173949.jpg","Gemini_Generated_Image_8noh408noh408noh.jpg","decorated-front-door-with-plant.jpg","glass-window-overlooking-green-garden.jpg","IMG_20220831_173949.jpg","IMG_20220927_171128.jpg","IMG_20230726_144006.jpg","IMG_20230930_183714.jpg","IMG_20230930_183755.jpg","IMG_20231107_162910.jpg","IMG_20240212_182109.jpg","IMG_20240218_124004.jpg","IMG_20240218_124031.jpg","IMG_20240505_183320.jpg","outdoor-sofa-with-beige-cushions-coffee-table-front-restaurant-window.jpg","ai-generated-modern-styled-entryway.jpg","beautiful-view-blue-lake-captured-from-inside-villa.jpg"];
+    const imgs = ["IMG_20230930_183714.jpg","IMG_20230930_183755.jpg","IMG_20240212_182109.jpg","IMG_20240218_124004.jpg","IMG_20240218_124031.jpg","IMG_20240505_183320.jpg","IMG_20220831_173949.jpg","Gemini_Generated_Image_8noh408noh408noh.jpg","decorated-front-door-with-plant.jpg","glass-window-overlooking-green-garden.jpg","IMG_20220831_173949.jpg","IMG_20220927_171128.jpg","IMG_20230930_183714.jpg","IMG_20230930_183755.jpg","IMG_20231107_162910.jpg","IMG_20240212_182109.jpg","IMG_20240218_124004.jpg","IMG_20240218_124031.jpg","IMG_20240505_183320.jpg","outdoor-sofa-with-beige-cushions-coffee-table-front-restaurant-window.jpg","ai-generated-modern-styled-entryway.jpg","beautiful-view-blue-lake-captured-from-inside-villa.jpg"];
     let idx = 0;
     const lb = document.getElementById('lb');
     const lbImg = document.getElementById('lbImg');
@@ -369,5 +358,73 @@
       if(e.key === 'ArrowLeft') lbNav(-1);
       if(e.key === 'ArrowRight') lbNav(1);
     });
+
+    // Favorites Logic
+    function getFavs() { return JSON.parse(localStorage.getItem('daralameer_favs') || '[]'); }
+    function toggleFav(id, e) {
+      e.stopPropagation();
+      let favs = getFavs();
+      if(favs.includes(id)) favs = favs.filter(x => x !== id);
+      else favs.push(id);
+      localStorage.setItem('daralameer_favs', JSON.stringify(favs));
+      updateFavIcons();
+      if(document.body.dataset.tab === 'favorites') renderFavs();
+    }
+    function updateFavIcons() {
+      const favs = getFavs();
+      document.querySelectorAll('.fav-btn').forEach(btn => {
+        const match = btn.getAttribute('onclick').match(/'([^']+)'/);
+        if(match && favs.includes(match[1])) btn.classList.add('favorited');
+        else btn.classList.remove('favorited');
+      });
+    }
+    function renderFavs() {
+      if(document.body.dataset.tab !== 'favorites') return;
+      const favs = getFavs();
+      document.querySelectorAll('.gallery-item').forEach(item => {
+        const btn = item.querySelector('.fav-btn');
+        if(btn) {
+           const match = btn.getAttribute('onclick').match(/'([^']+)'/);
+           if(match && favs.includes(match[1])) item.style.display = 'block';
+           else item.style.display = 'none';
+        }
+      });
+      if(favs.length === 0) {
+         let empty = document.getElementById('empty-favs');
+         if(!empty) {
+            empty = document.createElement('div');
+            empty.id = 'empty-favs';
+            empty.innerHTML = '<h3 style="color:var(--muted); text-align:center; padding: 40px; margin-top: 40px;">No favorites yet! Browse the gallery and click the heart icon to save items here.</h3>';
+            document.querySelector('.gallery-grid').appendChild(empty);
+         }
+         empty.style.display = 'block';
+      } else {
+         const empty = document.getElementById('empty-favs');
+         if(empty) empty.style.display = 'none';
+      }
+    }
+    
+    // Scroll to Top
+    const fab = document.createElement('button');
+    fab.className = 'fab-top';
+    fab.innerHTML = '&#8679;';
+    fab.onclick = () => window.scrollTo({top: 0, behavior: 'smooth'});
+    document.body.appendChild(fab);
+    window.addEventListener('scroll', () => {
+       if(window.scrollY > 300) fab.classList.add('show');
+       else fab.classList.remove('show');
+    });
+
+    // Initialize
+    updateFavIcons();
+    if(document.body.dataset.tab === 'favorites') {
+       renderFavs();
+       document.querySelectorAll('.gallery-item').forEach(item => {
+           const btn = item.querySelector('.fav-btn');
+           if(!btn) return;
+           const match = btn.getAttribute('onclick').match(/'([^']+)'/);
+           if(!match || !getFavs().includes(match[1])) item.style.display = 'none';
+       });
+    }
   </script>
 </body></html>

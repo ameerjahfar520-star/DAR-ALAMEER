@@ -5,9 +5,9 @@
   <title>Our Portfolio — Dar Al Ameer Factory</title>
   <meta name="description" content="Browse our complete portfolio: kitchen cabinets, aluminum windows, doors, decorations and more.">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=639204246021963893">
+  <link rel="stylesheet" href="styles.css?v=639204332521503794">
 </head>
-<body>
+<body data-tab="doors">
   
 <nav class="navbar">
   <a class="navbar-brand" href="index.html">DAR AL AMEER</a>
@@ -237,5 +237,73 @@
       if(e.key === 'ArrowLeft') lbNav(-1);
       if(e.key === 'ArrowRight') lbNav(1);
     });
+
+    // Favorites Logic
+    function getFavs() { return JSON.parse(localStorage.getItem('daralameer_favs') || '[]'); }
+    function toggleFav(id, e) {
+      e.stopPropagation();
+      let favs = getFavs();
+      if(favs.includes(id)) favs = favs.filter(x => x !== id);
+      else favs.push(id);
+      localStorage.setItem('daralameer_favs', JSON.stringify(favs));
+      updateFavIcons();
+      if(document.body.dataset.tab === 'favorites') renderFavs();
+    }
+    function updateFavIcons() {
+      const favs = getFavs();
+      document.querySelectorAll('.fav-btn').forEach(btn => {
+        const match = btn.getAttribute('onclick').match(/'([^']+)'/);
+        if(match && favs.includes(match[1])) btn.classList.add('favorited');
+        else btn.classList.remove('favorited');
+      });
+    }
+    function renderFavs() {
+      if(document.body.dataset.tab !== 'favorites') return;
+      const favs = getFavs();
+      document.querySelectorAll('.gallery-item').forEach(item => {
+        const btn = item.querySelector('.fav-btn');
+        if(btn) {
+           const match = btn.getAttribute('onclick').match(/'([^']+)'/);
+           if(match && favs.includes(match[1])) item.style.display = 'block';
+           else item.style.display = 'none';
+        }
+      });
+      if(favs.length === 0) {
+         let empty = document.getElementById('empty-favs');
+         if(!empty) {
+            empty = document.createElement('div');
+            empty.id = 'empty-favs';
+            empty.innerHTML = '<h3 style="color:var(--muted); text-align:center; padding: 40px; margin-top: 40px;">No favorites yet! Browse the gallery and click the heart icon to save items here.</h3>';
+            document.querySelector('.gallery-grid').appendChild(empty);
+         }
+         empty.style.display = 'block';
+      } else {
+         const empty = document.getElementById('empty-favs');
+         if(empty) empty.style.display = 'none';
+      }
+    }
+    
+    // Scroll to Top
+    const fab = document.createElement('button');
+    fab.className = 'fab-top';
+    fab.innerHTML = '&#8679;';
+    fab.onclick = () => window.scrollTo({top: 0, behavior: 'smooth'});
+    document.body.appendChild(fab);
+    window.addEventListener('scroll', () => {
+       if(window.scrollY > 300) fab.classList.add('show');
+       else fab.classList.remove('show');
+    });
+
+    // Initialize
+    updateFavIcons();
+    if(document.body.dataset.tab === 'favorites') {
+       renderFavs();
+       document.querySelectorAll('.gallery-item').forEach(item => {
+           const btn = item.querySelector('.fav-btn');
+           if(!btn) return;
+           const match = btn.getAttribute('onclick').match(/'([^']+)'/);
+           if(!match || !getFavs().includes(match[1])) item.style.display = 'none';
+       });
+    }
   </script>
 </body></html>
