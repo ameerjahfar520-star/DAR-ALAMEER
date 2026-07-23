@@ -29,6 +29,9 @@ a { text-decoration: none; color: inherit; }
 .fav-btn { background: none; border: none; font-size: 1.6rem; color: rgba(255,255,255,0.4); cursor: pointer; transition: 0.3s; padding: 0; outline: none; margin-left: auto; display: flex; align-items: center; justify-content: center; }
 .fav-btn:hover { color: #f43f5e; transform: scale(1.1); }
 .fav-btn.favorited { color: #f43f5e; }
+.share-btn { background: none; border: none; font-size: 1.4rem; color: rgba(255,255,255,0.6); cursor: pointer; transition: 0.3s; padding: 0; outline: none; margin-left: 10px; display: flex; align-items: center; justify-content: center; }
+.share-btn:hover { color: #3b82f6; transform: scale(1.1); }
+.site-watermark { position: fixed; bottom: 20px; left: 20px; width: 120px; opacity: 0.4; pointer-events: none; z-index: 50; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5)); }
 .card-body-header { display: flex; align-items: center; width: 100%; margin-bottom: 8px; }
 
 .tab-btn { background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text); padding: 10px 24px; border-radius: 30px; font-size: 1rem; cursor: pointer; transition: all 0.3s ease; font-family: inherit; }
