@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Our Portfolio — Dar Al Ameer Factory</title>
+  <meta name="description" content="Browse our complete portfolio: kitchen cabinets, aluminum windows, doors, decorations and more.">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=639204246021963893">
+</head>
+<body>
+  
+<nav class="navbar">
+  <a class="navbar-brand" href="index.html">DAR AL AMEER</a>
+  <button class="nav-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">&#9776;</button>
+  <ul class="nav-links" id="navMenu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="about.html">About Us</a></li>
+  </ul>
+</nav>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lb">
+    <div class="lb-content">
+      <div class="lb-spinner" id="lbSpin"></div>
+      <button class="lb-close" onclick="lbClose()">&#10005;</button>
+      <button class="lb-nav lb-prev" onclick="lbNav(-1, event)">&#8592;</button>
+      <img class="lb-img" id="lbImg" src="" alt="">
+      <button class="lb-nav lb-next" onclick="lbNav(1, event)">&#8594;</button>
+      <div class="lb-info" id="lbInfo"></div>
+    </div>
+  </div>
+
+  <div class="container" style="padding-top: 100px; padding-bottom: 80px;">
+    <h1 class="section-title">Our Portfolio</h1>
+    <div class="filter-tabs">
+  <a href="gallery.html" class="tab-btn">All Projects</a>
+  <a href="gallery_kitchencabinetwood.html" class="tab-btn">Kitchen Cabinet Wood</a>
+  <a href="gallery_aluminumwindows.html" class="tab-btn">Aluminum Windows</a>
+  <a href="gallery_doors.html" class="tab-btn">Doors</a>
+  <a href="gallery_decorations.html" class="tab-btn active">Decorations</a>
+  <a href="gallery_soffitawning.html" class="tab-btn">Soffit / Awning</a>
+</div>
+<div class="gallery-grid">
+
+      <div class="gallery-item Decorations show">
+        <div class="card" onclick="lbOpen('Chic Room Partition with Vases & Greenery.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/Chic Room Partition with Vases & Greenery.jpg" src="" alt="Chic Room Partition with Vases &amp; Greenery" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="id-badge">DC-001</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item Decorations show">
+        <div class="card" onclick="lbOpen('download (1).jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/download (1).jpg" src="" alt="download (1)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="id-badge">DC-002</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item Decorations show">
+        <div class="card" onclick="lbOpen('download (2).jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/download (2).jpg" src="" alt="download (2)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="id-badge">DC-003</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item Decorations show">
+        <div class="card" onclick="lbOpen('download (3).jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/download (3).jpg" src="" alt="download (3)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="id-badge">DC-004</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item Decorations show">
+        <div class="card" onclick="lbOpen('download (4).jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/download (4).jpg" src="" alt="download (4)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="id-badge">DC-005</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item Decorations show">
+        <div class="card" onclick="lbOpen('download (5).jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/download (5).jpg" src="" alt="download (5)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="id-badge">DC-006</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item Decorations show">
+        <div class="card" onclick="lbOpen('download (6).jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/download (6).jpg" src="" alt="download (6)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="id-badge">DC-007</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item Decorations show">
+        <div class="card" onclick="lbOpen('download (7).jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/download (7).jpg" src="" alt="download (7)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="id-badge">DC-008</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item Decorations show">
+        <div class="card" onclick="lbOpen('download (8).jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/download (8).jpg" src="" alt="download (8)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="id-badge">DC-009</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item Decorations show">
+        <div class="card" onclick="lbOpen('download (9).jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/download (9).jpg" src="" alt="download (9)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="id-badge">DC-010</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item Decorations show">
+        <div class="card" onclick="lbOpen('download (10).jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/download (10).jpg" src="" alt="download (10)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="id-badge">DC-011</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item Decorations show">
+        <div class="card" onclick="lbOpen('download (11).jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/download (11).jpg" src="" alt="download (11)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="id-badge">DC-012</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item Decorations show">
+        <div class="card" onclick="lbOpen('download (16).jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/download (16).jpg" src="" alt="download (16)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="id-badge">DC-013</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item Decorations show">
+        <div class="card" onclick="lbOpen('download.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/download.jpg" src="" alt="download" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="id-badge">DC-014</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item Decorations show">
+        <div class="card" onclick="lbOpen('Entrance Hall Partition Screen Column Floor to Ceiling - Freestanding Room Divider with Shelves, Easy Assembly Freestanding Decor for Bedroom, Office (Grey+Black, 39_4IN).jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/Entrance Hall Partition Screen Column Floor to Ceiling - Freestanding Room Divider with Shelves, Easy Assembly Freestanding Decor for Bedroom, Office (Grey+Black, 39_4IN).jpg" src="" alt="Entrance Hall Partition Screen Column Floor to Ceiling - Freestanding Room Divider with Shelves, Easy Assembly Freestanding Decor for Bedroom, Office (Grey+Black, 39_4IN)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="id-badge">DC-015</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item Decorations show">
+        <div class="card" onclick="lbOpen('good wall paenl.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/good wall paenl.jpg" src="" alt="good wall paenl" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="id-badge">DC-016</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item Decorations show">
+        <div class="card" onclick="lbOpen('Minimalist Colorful Boho Decor!.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/Minimalist Colorful Boho Decor!.jpg" src="" alt="Minimalist Colorful Boho Decor!" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="id-badge">DC-017</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item Decorations show">
+        <div class="card" onclick="lbOpen('Modern Dark Wood Laundry Room with Matte Black Washer & Dryer.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/Modern Dark Wood Laundry Room with Matte Black Washer & Dryer.jpg" src="" alt="Modern Dark Wood Laundry Room with Matte Black Washer &amp; Dryer" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="id-badge">DC-018</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item Decorations show">
+        <div class="card" onclick="lbOpen('Modern Dark Wood Mudroom with Built-In Bench, Hidden Storage, and Vertical Panel Feature Wall.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/Modern Dark Wood Mudroom with Built-In Bench, Hidden Storage, and Vertical Panel Feature Wall.jpg" src="" alt="Modern Dark Wood Mudroom with Built-In Bench, Hidden Storage, and Vertical Panel Feature Wall" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="id-badge">DC-019</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item Decorations show">
+        <div class="card" onclick="lbOpen('muebles.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/muebles.jpg" src="" alt="muebles" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="id-badge">DC-020</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item Decorations show">
+        <div class="card" onclick="lbOpen('Primer auto soñado.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/Primer auto soñado.jpg" src="" alt="Primer auto soñado" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="id-badge">DC-021</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item Decorations show">
+        <div class="card" onclick="lbOpen('Q-6_L_Household Small Apartment Floor Screen Partition Living Room Entrance Cabinet Household Light Luxury Blocking Crea.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/Q-6_L_Household Small Apartment Floor Screen Partition Living Room Entrance Cabinet Household Light Luxury Blocking Crea.jpg" src="" alt="Q-6_L_Household Small Apartment Floor Screen Partition Living Room Entrance Cabinet Household Light Luxury Blocking Crea" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="id-badge">DC-022</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item Decorations show">
+        <div class="card" onclick="lbOpen('Дом Инненархитектур.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/Дом Инненархитектур.jpg" src="" alt="Дом Инненархитектур" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="id-badge">DC-023</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item Decorations show">
+        <div class="card" onclick="lbOpen('Chic Black & White Living Room + TV Wall.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/Chic Black & White Living Room + TV Wall.jpg" src="" alt="Chic Black &amp; White Living Room + TV Wall" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="id-badge">DC-024</div>
+          </div>
+        </div>
+      </div>
+</div>
+
+  </div>
+  
+<footer>
+  <h4>Dar Al Ameer Factory</h4>
+  <p>Email: dar.alameer2004@gmail.com &nbsp;|&nbsp; Phone: 07504532559</p>
+  <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7">&copy; 2026 Dar Al Ameer Factory. All Rights Reserved.</p>
+</footer>
+
+  <script>
+    // Lazy load
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if(e.isIntersecting) {
+          const img = e.target;
+          img.src = img.dataset.src;
+          img.onload = () => img.classList.add('loaded');
+          observer.unobserve(img);
+        }
+      })
+    }, {rootMargin: '200px'});
+    document.querySelectorAll('img[data-src]').forEach(img => observer.observe(img));
+
+    // Lightbox
+    const imgs = ["Chic Room Partition with Vases & Greenery.jpg","download (1).jpg","download (2).jpg","download (3).jpg","download (4).jpg","download (5).jpg","download (6).jpg","download (7).jpg","download (8).jpg","download (9).jpg","download (10).jpg","download (11).jpg","download (16).jpg","download.jpg","Entrance Hall Partition Screen Column Floor to Ceiling - Freestanding Room Divider with Shelves, Easy Assembly Freestanding Decor for Bedroom, Office (Grey+Black, 39_4IN).jpg","good wall paenl.jpg","Minimalist Colorful Boho Decor!.jpg","Modern Dark Wood Laundry Room with Matte Black Washer & Dryer.jpg","Modern Dark Wood Mudroom with Built-In Bench, Hidden Storage, and Vertical Panel Feature Wall.jpg","muebles.jpg","Primer auto soñado.jpg","Q-6_L_Household Small Apartment Floor Screen Partition Living Room Entrance Cabinet Household Light Luxury Blocking Crea.jpg","Дом Инненархитектур.jpg","Chic Black & White Living Room + TV Wall.jpg"];
+    let idx = 0;
+    const lb = document.getElementById('lb');
+    const lbImg = document.getElementById('lbImg');
+    const lbInfo = document.getElementById('lbInfo');
+    const lbSpin = document.getElementById('lbSpin');
+    
+    function lbOpen(fn) {
+      idx = imgs.indexOf(fn);
+      if(idx < 0) idx = 0;
+      _lbShow();
+      lb.classList.add('active');
+    }
+    
+    function _lbShow() {
+      const fn = imgs[idx];
+      lbImg.style.opacity = 0;
+      lbSpin.classList.add('active');
+      lbInfo.textContent = fn;
+      const tmp = new Image();
+      tmp.onload = () => {
+        lbImg.src = tmp.src;
+        lbImg.style.opacity = 1;
+        lbSpin.classList.remove('active');
+      };
+      tmp.src = 'media/full/' + fn;
+    }
+    
+    function lbClose() {
+      lb.classList.remove('active');
+    }
+    
+    function lbNav(d, e) {
+      if(e) e.stopPropagation();
+      idx = (idx + d + imgs.length) % imgs.length;
+      _lbShow();
+    }
+    
+    // Close on background click
+    lb.addEventListener('click', (e) => {
+      if(e.target === lb || e.target.classList.contains('lb-content')) lbClose();
+    });
+    
+    document.addEventListener('keydown', e => {
+      if(!lb.classList.contains('active')) return;
+      if(e.key === 'Escape') lbClose();
+      if(e.key === 'ArrowLeft') lbNav(-1);
+      if(e.key === 'ArrowRight') lbNav(1);
+    });
+  </script>
+</body></html>
