@@ -5,7 +5,7 @@
   <title>Our Portfolio — Dar Al Ameer Factory</title>
   <meta name="description" content="Browse our complete portfolio: kitchen cabinets, aluminum windows, doors, decorations and more.">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=639204207956781545">
+  <link rel="stylesheet" href="styles.css?v=639204213242110323">
 </head>
 <body>
   
@@ -140,6 +140,28 @@
           </div>
         </div>
       </div>
+
+      <div class="gallery-item Doors show">
+        <div class="card" onclick="lbOpen('IMG_20210812_195848.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/IMG_20210812_195848.jpg" src="" alt="IMG_20210812_195848" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="id-badge">DR-017</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item Doors show">
+        <div class="card" onclick="lbOpen('IMG_20220927_171105.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/IMG_20220927_171105.jpg" src="" alt="IMG_20220927_171105" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="id-badge">DR-019</div>
+          </div>
+        </div>
+      </div>
 </div>
 
   </div>
@@ -165,7 +187,7 @@
     document.querySelectorAll('img[data-src]').forEach(img => observer.observe(img));
 
     // Lightbox
-    const imgs = ["IMG_20221228_214840.jpg","IMG_20230102_205458.jpg","IMG_20230102_205618.jpg","IMG_20230124_190632.jpg","IMG_20230715_192645.jpg","IMG_20230803_193517.jpg","IMG_20231122_200306.jpg","IMG_20211223_184314.jpg","IMG_20221228_153941.jpg"];
+    const imgs = ["IMG_20221228_214840.jpg","IMG_20230102_205458.jpg","IMG_20230102_205618.jpg","IMG_20230124_190632.jpg","IMG_20230715_192645.jpg","IMG_20230803_193517.jpg","IMG_20231122_200306.jpg","IMG_20211223_184314.jpg","IMG_20221228_153941.jpg","IMG_20210812_195848.jpg","IMG_20220927_171105.jpg"];
     let idx = 0;
     const lb = document.getElementById('lb');
     const lbImg = document.getElementById('lbImg');

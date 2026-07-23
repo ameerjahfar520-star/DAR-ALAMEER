@@ -5,7 +5,7 @@
   <title>Our Portfolio — Dar Al Ameer Factory</title>
   <meta name="description" content="Browse our complete portfolio: kitchen cabinets, aluminum windows, doors, decorations and more.">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=639204207956781545">
+  <link rel="stylesheet" href="styles.css?v=639204213242110323">
 </head>
 <body>
   
@@ -328,6 +328,28 @@
         </div>
       </div>
 
+      <div class="gallery-item Doors show">
+        <div class="card" onclick="lbOpen('IMG_20210812_195848.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/IMG_20210812_195848.jpg" src="" alt="IMG_20210812_195848" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="id-badge">DR-017</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item Doors show">
+        <div class="card" onclick="lbOpen('IMG_20220927_171105.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/IMG_20220927_171105.jpg" src="" alt="IMG_20220927_171105" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="id-badge">DR-019</div>
+          </div>
+        </div>
+      </div>
+
       <div class="gallery-item SoffitAwning show">
         <div class="card" onclick="lbOpen('Gemini_Generated_Image_eoyjv8eoyjv8eoyj.jpg')">
           <div class="card-img-wrap">
@@ -363,7 +385,7 @@
     document.querySelectorAll('img[data-src]').forEach(img => observer.observe(img));
 
     // Lightbox
-    const imgs = ["Gemini_Generated_Image_4wg1yr4wg1yr4wg1.jpg","Gemini_Generated_Image_7oiz3u7oiz3u7oiz.jpg","Gemini_Generated_Image_g313vig313vig313.jpg","Gemini_Generated_Image_k0m82dk0m82dk0m8.jpg","Gemini_Generated_Image_ld3hzlld3hzlld3h.jpg","Gemini_Generated_Image_nmu3yonmu3yonmu3.jpg","Gemini_Generated_Image_rt7qtyrt7qtyrt7q.jpg","Gemini_Generated_Image_vas98tvas98tvas9.jpg","Gemini_Generated_Image_grnzi4grnzi4grnz.jpg","IMG_20230930_183714.jpg","IMG_20230930_183755.jpg","IMG_20240212_182109.jpg","IMG_20240218_124004.jpg","IMG_20240218_124031.jpg","IMG_20240505_183320.jpg","IMG_20220831_173949.jpg","Gemini_Generated_Image_8noh408noh408noh.jpg","IMG_20221228_214840.jpg","IMG_20230102_205458.jpg","IMG_20230102_205618.jpg","IMG_20230124_190632.jpg","IMG_20230715_192645.jpg","IMG_20230803_193517.jpg","IMG_20231122_200306.jpg","IMG_20211223_184314.jpg","IMG_20221228_153941.jpg","Gemini_Generated_Image_eoyjv8eoyjv8eoyj.jpg"];
+    const imgs = ["Gemini_Generated_Image_4wg1yr4wg1yr4wg1.jpg","Gemini_Generated_Image_7oiz3u7oiz3u7oiz.jpg","Gemini_Generated_Image_g313vig313vig313.jpg","Gemini_Generated_Image_k0m82dk0m82dk0m8.jpg","Gemini_Generated_Image_ld3hzlld3hzlld3h.jpg","Gemini_Generated_Image_nmu3yonmu3yonmu3.jpg","Gemini_Generated_Image_rt7qtyrt7qtyrt7q.jpg","Gemini_Generated_Image_vas98tvas98tvas9.jpg","Gemini_Generated_Image_grnzi4grnzi4grnz.jpg","IMG_20230930_183714.jpg","IMG_20230930_183755.jpg","IMG_20240212_182109.jpg","IMG_20240218_124004.jpg","IMG_20240218_124031.jpg","IMG_20240505_183320.jpg","IMG_20220831_173949.jpg","Gemini_Generated_Image_8noh408noh408noh.jpg","IMG_20221228_214840.jpg","IMG_20230102_205458.jpg","IMG_20230102_205618.jpg","IMG_20230124_190632.jpg","IMG_20230715_192645.jpg","IMG_20230803_193517.jpg","IMG_20231122_200306.jpg","IMG_20211223_184314.jpg","IMG_20221228_153941.jpg","IMG_20210812_195848.jpg","IMG_20220927_171105.jpg","Gemini_Generated_Image_eoyjv8eoyjv8eoyj.jpg"];
     let idx = 0;
     const lb = document.getElementById('lb');
     const lbImg = document.getElementById('lbImg');
