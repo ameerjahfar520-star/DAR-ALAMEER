@@ -32,9 +32,9 @@ const translations = {
     'category_Decorations': 'ديكورات',
     'category_SoffitAwning': 'مظلات وسقوف',
     'category_Videos': 'فيديوهات',
-    'hero_title': `DAR AL AMEER Factory`,
-    'hero_subtitle': `Premium Aluminum &amp; Ketchen Cabenet Manufacturing`,
-    'about_us': `Welcome to Dar Al Ameer Factory. We specialize in high quality materials and flawless engineering.`
+    'hero_title': `مصنع دار الأمير`,
+    'hero_subtitle': `تصنيع الألمنيوم وخزائن المطابخ الفاخرة`,
+    'about_us': `مرحباً بكم في مصنع دار الأمير. نحن متخصصون في المواد عالية الجودة والهندسة العيوب.`
   },
   'ku': {
     'nav_home': 'سەرەکی',
@@ -50,9 +50,9 @@ const translations = {
     'category_Decorations': 'دیکۆرات',
     'category_SoffitAwning': 'سەقف و سابات',
     'category_Videos': 'ڤیدیۆ',
-    'hero_title': `DAR AL AMEER Factory`,
-    'hero_subtitle': `Premium Aluminum &amp; Ketchen Cabenet Manufacturing`,
-    'about_us': `Welcome to Dar Al Ameer Factory. We specialize in high quality materials and flawless engineering.`
+    'hero_title': `کارگەی دار ئەمیر`,
+    'hero_subtitle': `دروستکردنی ئەلەمنیۆم و کەوانتەری چێشتخانەی نایاب`,
+    'about_us': `بەخێربێن بۆ کارگەی دار ئەمیر. ئێمە پسپۆڕین لە مادەی کوالێتی بەرز و  بێ کەموکوڕی.`
   }
 };
 

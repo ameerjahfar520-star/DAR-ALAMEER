@@ -5,7 +5,7 @@
   <title>Our Portfolio — Dar Al Ameer Factory</title>
   <meta name="description" content="Browse our complete portfolio: kitchen cabinets, aluminum windows, doors, decorations and more.">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=639204426726658644">
+  <link rel="stylesheet" href="styles.css?v=639204434897195464">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icon-512.png">
   <link rel="icon" sizes="512x512" href="icon-512.png">
@@ -19,11 +19,16 @@
     </a>
   <button class="nav-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">&#9776;</button>
   <ul class="nav-links" id="navMenu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="about.html">About Us</a></li>
+    <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+    <li><a href="gallery.html" data-i18n="nav_gallery">Gallery</a></li>
+    <li><a href="about.html" data-i18n="nav_about">About Us</a></li>
   </ul>
 </nav>
+<div style="position: fixed; top: 1rem; right: 1rem; z-index: 1001; display: flex; gap: 0.5rem;">
+  <button onclick="setLanguage('en')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: #fff; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">EN</button>
+  <button onclick="setLanguage('ar')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: #fff; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">AR</button>
+  <button onclick="setLanguage('ku')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: #fff; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">KU</button>
+</div>
 
   <!-- Lightbox -->
   <div class="lightbox" id="lb">
@@ -38,15 +43,15 @@
   </div>
 
   <div class="container" style="padding-top: 100px; padding-bottom: 80px;">
-    <h1 class="section-title">Our Portfolio</h1>
+    <h1 class="section-title" data-i18n="nav_gallery">Our Portfolio</h1>
     <div class="filter-tabs">
-  <a href="gallery.html" class="tab-btn">All Projects</a>
+  <a href="gallery.html" class="tab-btn" data-i18n="filter_all">All Projects</a>
   <a href="gallery_favorites.html" class="tab-btn">&#x2764; Favorites</a>
-  <a href="gallery_kitchencabinetwood.html" class="tab-btn">Kitchen Cabinet Wood</a>
-  <a href="gallery_aluminumwindows.html" class="tab-btn">Aluminum Windows</a>
-  <a href="gallery_doors.html" class="tab-btn">Doors</a>
-  <a href="gallery_decorations.html" class="tab-btn">Decorations</a>
-  <a href="gallery_soffitawning.html" class="tab-btn active">Soffit / Awning</a>
+  <a href="gallery_kitchencabinetwood.html" class="tab-btn" data-i18n="category_KitchenCabinetWood">Kitchen Cabinet Wood</a>
+  <a href="gallery_aluminumwindows.html" class="tab-btn" data-i18n="category_AluminumWindows">Aluminum Windows</a>
+  <a href="gallery_doors.html" class="tab-btn" data-i18n="category_Doors">Doors</a>
+  <a href="gallery_decorations.html" class="tab-btn" data-i18n="category_Decorations">Decorations</a>
+  <a href="gallery_soffitawning.html" class="tab-btn active" data-i18n="category_SoffitAwning">Soffit / Awning</a>
 </div>
 <div class="gallery-grid">
 
@@ -322,4 +327,5 @@
        });
     }
   </script>
+  <script src="translations.js"></script>
 </body></html>

@@ -5,7 +5,7 @@
   <title>Dar Al Ameer Factory</title>
   <meta name="description" content="Premium Aluminum, PVC and Wood Manufacturing — Dar Al Ameer Factory">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=639204426726658644">
+  <link rel="stylesheet" href="styles.css?v=639204434897195464">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icon-512.png">
   <link rel="icon" sizes="512x512" href="icon-512.png">
@@ -19,15 +19,20 @@
     </a>
   <button class="nav-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">&#9776;</button>
   <ul class="nav-links" id="navMenu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="about.html">About Us</a></li>
+    <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+    <li><a href="gallery.html" data-i18n="nav_gallery">Gallery</a></li>
+    <li><a href="about.html" data-i18n="nav_about">About Us</a></li>
   </ul>
 </nav>
+<div style="position: fixed; top: 1rem; right: 1rem; z-index: 1001; display: flex; gap: 0.5rem;">
+  <button onclick="setLanguage('en')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: #fff; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">EN</button>
+  <button onclick="setLanguage('ar')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: #fff; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">AR</button>
+  <button onclick="setLanguage('ku')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: #fff; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">KU</button>
+</div>
   <section class="hero">
-    <h1>DAR AL AMEER Factory</h1>
-    <p>Premium Aluminum &amp; Ketchen Cabenet Manufacturing</p>
-    <a href="gallery.html" class="btn-primary">View Our Portfolio</a>
+    <h1 data-i18n="hero_title">DAR AL AMEER Factory</h1>
+    <p data-i18n="hero_subtitle">Premium Aluminum &amp; Ketchen Cabenet Manufacturing</p>
+    <a href="gallery.html" class="btn-primary" data-i18n="nav_gallery">View Our Portfolio</a>
   </section>
   
 <footer>
@@ -35,4 +40,5 @@
   <p>Email: dar.alameer2004@gmail.com &nbsp;|&nbsp; Phone: 07504532559</p>
   <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7">&copy; 2026 Dar Al Ameer Factory. All Rights Reserved.</p>
 </footer>
+  <script src="translations.js"></script>
 </body></html>
