@@ -5,11 +5,10 @@
   <title>Our Portfolio — Dar Al Ameer Factory</title>
   <meta name="description" content="Browse our complete portfolio: kitchen cabinets, aluminum windows, doors, decorations and more.">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=639204351544579046">
+  <link rel="stylesheet" href="styles.css?v=639204369098606224">
 </head>
 <body data-tab="doors">
   
-<img src="logo.png" class="site-watermark" alt="Dar Al Ameer Watermark" onerror="this.style.display='none'">
 <nav class="navbar">
   <a class="navbar-brand" href="index.html">DAR AL AMEER</a>
   <button class="nav-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">&#9776;</button>
@@ -50,7 +49,11 @@
             <img data-src="media/thumb/IMG_20221228_214840.jpg" src="" alt="IMG_20221228_214840" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
-            <div class="id-badge">DR-001</div>
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DR-001</div>
+              <button class="share-btn" onclick="shareImg('IMG_20221228_214840.jpg', 'IMG_20221228_214840', event)">&#x2197;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-001', event)">&#x2764;</button>
+            </div>
           </div>
         </div>
       </div>
@@ -61,7 +64,11 @@
             <img data-src="media/thumb/IMG_20230102_205458.jpg" src="" alt="IMG_20230102_205458" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
-            <div class="id-badge">DR-002</div>
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DR-002</div>
+              <button class="share-btn" onclick="shareImg('IMG_20230102_205458.jpg', 'IMG_20230102_205458', event)">&#x2197;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-002', event)">&#x2764;</button>
+            </div>
           </div>
         </div>
       </div>
@@ -72,7 +79,11 @@
             <img data-src="media/thumb/IMG_20230102_205618.jpg" src="" alt="IMG_20230102_205618" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
-            <div class="id-badge">DR-003</div>
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DR-003</div>
+              <button class="share-btn" onclick="shareImg('IMG_20230102_205618.jpg', 'IMG_20230102_205618', event)">&#x2197;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-003', event)">&#x2764;</button>
+            </div>
           </div>
         </div>
       </div>
@@ -83,7 +94,11 @@
             <img data-src="media/thumb/IMG_20230124_190632.jpg" src="" alt="IMG_20230124_190632" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
-            <div class="id-badge">DR-004</div>
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DR-004</div>
+              <button class="share-btn" onclick="shareImg('IMG_20230124_190632.jpg', 'IMG_20230124_190632', event)">&#x2197;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-004', event)">&#x2764;</button>
+            </div>
           </div>
         </div>
       </div>
@@ -94,7 +109,11 @@
             <img data-src="media/thumb/IMG_20230715_192645.jpg" src="" alt="IMG_20230715_192645" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
-            <div class="id-badge">DR-005</div>
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DR-005</div>
+              <button class="share-btn" onclick="shareImg('IMG_20230715_192645.jpg', 'IMG_20230715_192645', event)">&#x2197;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-005', event)">&#x2764;</button>
+            </div>
           </div>
         </div>
       </div>
@@ -105,7 +124,11 @@
             <img data-src="media/thumb/IMG_20230803_193517.jpg" src="" alt="IMG_20230803_193517" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
-            <div class="id-badge">DR-008</div>
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DR-008</div>
+              <button class="share-btn" onclick="shareImg('IMG_20230803_193517.jpg', 'IMG_20230803_193517', event)">&#x2197;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-008', event)">&#x2764;</button>
+            </div>
           </div>
         </div>
       </div>
@@ -116,7 +139,11 @@
             <img data-src="media/thumb/IMG_20231122_200306.jpg" src="" alt="IMG_20231122_200306" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
-            <div class="id-badge">DR-010</div>
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DR-010</div>
+              <button class="share-btn" onclick="shareImg('IMG_20231122_200306.jpg', 'IMG_20231122_200306', event)">&#x2197;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-010', event)">&#x2764;</button>
+            </div>
           </div>
         </div>
       </div>
@@ -127,7 +154,11 @@
             <img data-src="media/thumb/IMG_20211223_184314.jpg" src="" alt="IMG_20211223_184314" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
-            <div class="id-badge">DR-012</div>
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DR-012</div>
+              <button class="share-btn" onclick="shareImg('IMG_20211223_184314.jpg', 'IMG_20211223_184314', event)">&#x2197;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-012', event)">&#x2764;</button>
+            </div>
           </div>
         </div>
       </div>
@@ -138,7 +169,11 @@
             <img data-src="media/thumb/IMG_20221228_153941.jpg" src="" alt="IMG_20221228_153941" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
-            <div class="id-badge">DR-016</div>
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DR-016</div>
+              <button class="share-btn" onclick="shareImg('IMG_20221228_153941.jpg', 'IMG_20221228_153941', event)">&#x2197;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-016', event)">&#x2764;</button>
+            </div>
           </div>
         </div>
       </div>
@@ -149,7 +184,11 @@
             <img data-src="media/thumb/IMG_20210812_195848.jpg" src="" alt="IMG_20210812_195848" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
-            <div class="id-badge">DR-017</div>
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DR-017</div>
+              <button class="share-btn" onclick="shareImg('IMG_20210812_195848.jpg', 'IMG_20210812_195848', event)">&#x2197;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-017', event)">&#x2764;</button>
+            </div>
           </div>
         </div>
       </div>
@@ -160,7 +199,11 @@
             <img data-src="media/thumb/IMG_20220927_171105.jpg" src="" alt="IMG_20220927_171105" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
-            <div class="id-badge">DR-019</div>
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DR-019</div>
+              <button class="share-btn" onclick="shareImg('IMG_20220927_171105.jpg', 'IMG_20220927_171105', event)">&#x2197;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-019', event)">&#x2764;</button>
+            </div>
           </div>
         </div>
       </div>
@@ -290,9 +333,22 @@
     fab.innerHTML = '&#8679;';
     fab.onclick = () => window.scrollTo({top: 0, behavior: 'smooth'});
     document.body.appendChild(fab);
+    let lastScrollY = window.scrollY;
     window.addEventListener('scroll', () => {
        if(window.scrollY > 300) fab.classList.add('show');
        else fab.classList.remove('show');
+       
+       const currentScrollY = window.scrollY;
+       const nav = document.querySelector('.navbar');
+       const tabs = document.querySelector('.filter-tabs');
+       if (currentScrollY > 100 && currentScrollY > lastScrollY) {
+           if(nav) nav.classList.add('nav-hidden');
+           if(tabs) tabs.classList.add('nav-hidden');
+       } else {
+           if(nav) nav.classList.remove('nav-hidden');
+           if(tabs) tabs.classList.remove('nav-hidden');
+       }
+       lastScrollY = currentScrollY;
     });
 
     // Share Logic
