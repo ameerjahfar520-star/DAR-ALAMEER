@@ -5,7 +5,8 @@ body { font-family: 'Outfit', sans-serif; background-color: var(--bg); color: va
 a { text-decoration: none; color: inherit; }
 .navbar { position: fixed; top: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: space-between; padding: 1rem 5%; background: rgba(10, 15, 28, 0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); z-index: 1000; border-bottom: 1px solid var(--border); transition: transform 0.3s ease; }
 .navbar.nav-hidden { transform: translateY(-100%); }
-.navbar-brand { font-size: 1.5rem; font-weight: 800; letter-spacing: 1px; color: #fff; }
+.navbar-brand { font-size: 1.5rem; font-weight: 800; letter-spacing: 1px; color: #fff; display: flex; align-items: center; }
+.nav-logo { height: 35px; width: auto; margin-right: 12px; object-fit: contain; }
 .nav-links { display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; }
 .nav-links a { color: var(--text); font-weight: 500; transition: color 0.2s; font-size: 1.1rem; }
 .nav-links a:hover { color: var(--accent); }
