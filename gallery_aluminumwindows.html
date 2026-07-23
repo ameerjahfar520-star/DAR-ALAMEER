@@ -5,7 +5,7 @@
   <title>Our Portfolio — Dar Al Ameer Factory</title>
   <meta name="description" content="Browse our complete portfolio: kitchen cabinets, aluminum windows, doors, decorations and more.">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=639204198963461044">
+  <link rel="stylesheet" href="styles.css?v=639204199589758561">
 </head>
 <body>
   
@@ -64,17 +64,6 @@
       </div>
 
       <div class="gallery-item AluminumWindows show">
-        <div class="card" onclick="lbOpen('IMG_20231107_162910.jpg')">
-          <div class="card-img-wrap">
-            <img data-src="media/thumb/IMG_20231107_162910.jpg" src="" alt="IMG_20231107_162910" loading="lazy" decoding="async">
-          </div>
-          <div class="card-body">
-            <div class="id-badge">AW-003</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="gallery-item AluminumWindows show">
         <div class="card" onclick="lbOpen('IMG_20240212_182109.jpg')">
           <div class="card-img-wrap">
             <img data-src="media/thumb/IMG_20240212_182109.jpg" src="" alt="IMG_20240212_182109" loading="lazy" decoding="async">
@@ -128,28 +117,6 @@
           </div>
         </div>
       </div>
-
-      <div class="gallery-item AluminumWindows show">
-        <div class="card" onclick="lbOpen('IMG_20220927_171128.jpg')">
-          <div class="card-img-wrap">
-            <img data-src="media/thumb/IMG_20220927_171128.jpg" src="" alt="IMG_20220927_171128" loading="lazy" decoding="async">
-          </div>
-          <div class="card-body">
-            <div class="id-badge">AW-009</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="gallery-item AluminumWindows show">
-        <div class="card" onclick="lbOpen('IMG_20230726_144006.jpg')">
-          <div class="card-img-wrap">
-            <img data-src="media/thumb/IMG_20230726_144006.jpg" src="" alt="IMG_20230726_144006" loading="lazy" decoding="async">
-          </div>
-          <div class="card-body">
-            <div class="id-badge">AW-010</div>
-          </div>
-        </div>
-      </div>
 </div>
 
   </div>
@@ -175,7 +142,7 @@
     document.querySelectorAll('img[data-src]').forEach(img => observer.observe(img));
 
     // Lightbox
-    const imgs = ["IMG_20230930_183714.jpg","IMG_20230930_183755.jpg","IMG_20231107_162910.jpg","IMG_20240212_182109.jpg","IMG_20240218_124004.jpg","IMG_20240218_124031.jpg","IMG_20240505_183320.jpg","IMG_20220831_173949.jpg","IMG_20220927_171128.jpg","IMG_20230726_144006.jpg"];
+    const imgs = ["IMG_20230930_183714.jpg","IMG_20230930_183755.jpg","IMG_20240212_182109.jpg","IMG_20240218_124004.jpg","IMG_20240218_124031.jpg","IMG_20240505_183320.jpg","IMG_20220831_173949.jpg"];
     let idx = 0;
     const lb = document.getElementById('lb');
     const lbImg = document.getElementById('lbImg');
