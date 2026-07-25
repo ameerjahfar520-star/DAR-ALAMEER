@@ -5,7 +5,7 @@
   <title>Our Portfolio — Dar Al Ameer Factory</title>
   <meta name="description" content="Browse our complete portfolio: kitchen cabinets, aluminum windows, doors, decorations and more.">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=639206217994362034">
+  <link rel="stylesheet" href="styles.css?v=639206225603910814">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icon-512.png">
   <link rel="icon" sizes="512x512" href="icon-512.png">
@@ -721,11 +721,13 @@
       if(idx < 0) idx = 0;
       _lbShow();
       lb.classList.add('active');
+      history.pushState({lb: true}, '');
     }
     
     function _lbShow() {
       const fn = imgs[idx];
       lbImg.style.opacity = 0;
+      lbImg.classList.remove('zoomed');
       lbSpin.classList.add('active');
       lbInfo.textContent = fn;
       const tmp = new Image();
@@ -738,15 +740,31 @@
     }
     
     function lbClose() {
-      lb.classList.remove('active');
+      if (lb.classList.contains('active')) {
+          lb.classList.remove('active');
+          lbImg.classList.remove('zoomed');
+          if (history.state && history.state.lb) history.back();
+      }
     }
     
+    window.addEventListener('popstate', (e) => {
+      if (lb.classList.contains('active')) {
+          lb.classList.remove('active');
+          lbImg.classList.remove('zoomed');
+      }
+    });
+
     function lbNav(d, e) {
       if(e) e.stopPropagation();
       idx = (idx + d + imgs.length) % imgs.length;
       _lbShow();
     }
     
+    lbImg.addEventListener('click', (e) => {
+      e.stopPropagation();
+      lbImg.classList.toggle('zoomed');
+    });
+
     // Close on background click
     lb.addEventListener('click', (e) => {
       if(e.target === lb || e.target.classList.contains('lb-content')) lbClose();

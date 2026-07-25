@@ -66,14 +66,16 @@ a { text-decoration: none; color: inherit; }
 /* Lightbox */
 .lightbox { position: fixed; inset: 0; background: rgba(5,8,15,0.98); z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; backdrop-filter: blur(10px); }
 .lightbox.active { opacity: 1; pointer-events: auto; }
-.lb-content { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; padding: 40px; position: relative; }
-.lb-img { max-width: 100%; max-height: 85vh; border-radius: 8px; object-fit: contain; box-shadow: 0 10px 40px rgba(0,0,0,0.5); user-select: none; }
-.lb-close { top: 20px; right: 20px; }
-.lb-prev { left: 20px; top: 50%; transform: translateY(-50%); }
-.lb-prev:hover { transform: translateY(-50%) scale(1.1); }
-.lb-next { right: 20px; top: 50%; transform: translateY(-50%); }
-.lb-next:hover { transform: translateY(-50%) scale(1.1); }
-.lb-info { position: absolute; bottom: 20px; font-family: monospace; color: #94a3b8; font-size: 1rem; }
+.lb-content { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; padding: 40px; position: relative; overflow: auto; }
+.lb-img { max-width: 100%; max-height: 85vh; border-radius: 8px; object-fit: contain; box-shadow: 0 10px 40px rgba(0,0,0,0.5); user-select: none; transition: transform 0.3s; cursor: zoom-in; margin: auto; }
+.lb-img.zoomed { max-width: none; max-height: none; cursor: zoom-out; }
+.lb-nav, .lb-close { position: absolute; background: rgba(0,0,0,0.5); border: none; color: #fff; display: flex; align-items: center; justify-content: center; border-radius: 50%; cursor: pointer; z-index: 100; transition: 0.3s; }
+.lb-nav:hover, .lb-close:hover { background: rgba(0,0,0,0.8); color: #60a5fa; transform: scale(1.1); }
+.lb-nav { width: 50px; height: 50px; top: 50%; font-size: 2rem; transform: translateY(-50%); }
+.lb-prev { left: 20px; }
+.lb-next { right: 20px; }
+.lb-close { width: 40px; height: 40px; top: 20px; right: 20px; font-size: 1.5rem; }
+.lb-info { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); font-family: monospace; color: #94a3b8; font-size: 1rem; z-index: 100; background: rgba(0,0,0,0.5); padding: 4px 10px; border-radius: 4px; }
 .lb-spinner { position: absolute; width: 40px; height: 40px; border: 3px solid rgba(255,255,255,0.1); border-top-color: #3b82f6; border-radius: 50%; animation: spin 1s linear infinite; display: none; }
 .lb-spinner.active { display: block; }
 @keyframes spin { to { transform: rotate(360deg); } }
