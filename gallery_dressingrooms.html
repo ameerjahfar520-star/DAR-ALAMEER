@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Our Portfolio — Dar Al Ameer Factory</title>
+  <meta name="description" content="Browse our complete portfolio: kitchen cabinets, aluminum windows, doors, decorations and more.">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=639206217994362034">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-512.png">
+  <link rel="icon" sizes="512x512" href="icon-512.png">
+</head>
+<body data-tab="dressingrooms">
+  
+<nav class="navbar">
+  <a class="navbar-brand" href="index.html">
+      <img src="logo.png" class="nav-logo" alt="Logo">
+      DAR AL AMEER
+    </a>
+  <button class="nav-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">&#9776;</button>
+  <ul class="nav-links" id="navMenu">
+    <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+    <li><a href="gallery.html" data-i18n="nav_gallery">Gallery</a></li>
+    <li><a href="about.html" data-i18n="nav_about">About Us</a></li>
+    <li class="lang-switcher" style="display: flex; gap: 0.5rem; align-items: center; margin-left: auto; padding-left: 1rem;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: rgba(255,255,255,0.7);"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+      <button onclick="setLanguage('en')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: #fff; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">EN</button>
+      <button onclick="setLanguage('ar')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: #fff; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">AR</button>
+      <button onclick="setLanguage('ku')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: #fff; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">KU</button>
+    </li>
+  </ul>
+</nav>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lb">
+    <div class="lb-content">
+      <div class="lb-spinner" id="lbSpin"></div>
+      <button class="lb-close" onclick="lbClose()">&#10005;</button>
+      <button class="lb-nav lb-prev" onclick="lbNav(-1, event)">&#8592;</button>
+      <img class="lb-img" id="lbImg" src="" alt="">
+      <button class="lb-nav lb-next" onclick="lbNav(1, event)">&#8594;</button>
+      <div class="lb-info" id="lbInfo"></div>
+    </div>
+  </div>
+
+  <div class="container" style="padding-top: 100px; padding-bottom: 80px;">
+    <h1 class="section-title" data-i18n="nav_gallery">Our Portfolio</h1>
+    <div class="filter-tabs">
+  <a href="gallery.html" class="tab-btn" data-i18n="filter_all">All Projects</a>
+  <a href="gallery_favorites.html" class="tab-btn">&#x2764; Favorites</a>
+  <a href="gallery_kitchencabinetwood.html" class="tab-btn" data-i18n="category_KitchenCabinetWood">Kitchen Cabinet Wood</a>
+  <a href="gallery_doors.html" class="tab-btn" data-i18n="category_Doors">Doors</a>
+  <a href="gallery_decorations.html" class="tab-btn" data-i18n="category_Decorations">Decorations</a>
+  <a href="gallery_soffitawning.html" class="tab-btn" data-i18n="category_SoffitAwning">Soffit / Awning</a>
+  <a href="gallery_dressingrooms.html" class="tab-btn active" data-i18n="category_DressingRooms">Dressing Rooms</a>
+</div>
+<div class="gallery-grid">
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-001.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-001.jpg" src="" alt="✨ ديكور النور - خزائن مخصصة فاخرة في قطر 🇶🇦 ✨_هل تبحث عن خزانة أنيقة وعصرية وعملية لمنزلك؟_في ديكور النور، نصمّم خزائن حسب الطلب لتناسب ذوقك واحتياجاتك – من داخل قطر!_🪵 مواد عالية الجودة_🛠️ عمل احترافي من قبل عمال مهرة_🎨 ت" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-001</div>
+              <button class="share-btn" onclick="shareImg('DSR-001.jpg', '✨ ديكور النور - خزائن مخصصة فاخرة في قطر 🇶🇦 ✨_هل تبحث عن خزانة أنيقة وعصرية وعملية لمنزلك؟_في ديكور النور، نصمّم خزائن حسب الطلب لتناسب ذوقك واحتياجاتك – من داخل قطر!_🪵 مواد عالية الجودة_🛠️ عمل احترافي من قبل عمال مهرة_🎨 ت', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-001', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-002.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-002.jpg" src="" alt="0596623247" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-002</div>
+              <button class="share-btn" onclick="shareImg('DSR-002.jpg', '0596623247', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-002', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-003.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-003.jpg" src="" alt="download (1)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-003</div>
+              <button class="share-btn" onclick="shareImg('DSR-003.jpg', 'download (1)', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-003', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-004.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-004.jpg" src="" alt="download (2)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-004</div>
+              <button class="share-btn" onclick="shareImg('DSR-004.jpg', 'download (2)', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-004', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-005.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-005.jpg" src="" alt="download (3)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-005</div>
+              <button class="share-btn" onclick="shareImg('DSR-005.jpg', 'download (3)', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-005', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-006.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-006.jpg" src="" alt="download (4)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-006</div>
+              <button class="share-btn" onclick="shareImg('DSR-006.jpg', 'download (4)', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-006', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-007.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-007.jpg" src="" alt="download (5)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-007</div>
+              <button class="share-btn" onclick="shareImg('DSR-007.jpg', 'download (5)', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-007', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-008.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-008.jpg" src="" alt="download (6)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-008</div>
+              <button class="share-btn" onclick="shareImg('DSR-008.jpg', 'download (6)', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-008', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-009.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-009.jpg" src="" alt="download (7)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-009</div>
+              <button class="share-btn" onclick="shareImg('DSR-009.jpg', 'download (7)', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-009', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-010.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-010.jpg" src="" alt="download (8)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-010</div>
+              <button class="share-btn" onclick="shareImg('DSR-010.jpg', 'download (8)', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-010', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-011.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-011.jpg" src="" alt="download (9)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-011</div>
+              <button class="share-btn" onclick="shareImg('DSR-011.jpg', 'download (9)', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-011', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-012.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-012.jpg" src="" alt="download (10)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-012</div>
+              <button class="share-btn" onclick="shareImg('DSR-012.jpg', 'download (10)', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-012', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-013.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-013.jpg" src="" alt="download (11)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-013</div>
+              <button class="share-btn" onclick="shareImg('DSR-013.jpg', 'download (11)', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-013', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-014.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-014.jpg" src="" alt="download (12)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-014</div>
+              <button class="share-btn" onclick="shareImg('DSR-014.jpg', 'download (12)', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-014', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-015.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-015.jpg" src="" alt="download (13)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-015</div>
+              <button class="share-btn" onclick="shareImg('DSR-015.jpg', 'download (13)', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-015', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-016.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-016.jpg" src="" alt="download (14)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-016</div>
+              <button class="share-btn" onclick="shareImg('DSR-016.jpg', 'download (14)', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-016', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-017.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-017.jpg" src="" alt="download (15)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-017</div>
+              <button class="share-btn" onclick="shareImg('DSR-017.jpg', 'download (15)', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-017', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-018.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-018.jpg" src="" alt="download (16)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-018</div>
+              <button class="share-btn" onclick="shareImg('DSR-018.jpg', 'download (16)', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-018', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-019.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-019.jpg" src="" alt="download (17)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-019</div>
+              <button class="share-btn" onclick="shareImg('DSR-019.jpg', 'download (17)', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-019', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-020.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-020.jpg" src="" alt="download (18)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-020</div>
+              <button class="share-btn" onclick="shareImg('DSR-020.jpg', 'download (18)', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-020', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-021.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-021.jpg" src="" alt="download" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-021</div>
+              <button class="share-btn" onclick="shareImg('DSR-021.jpg', 'download', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-021', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-022.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-022.jpg" src="" alt="Fadali Future For Furniture" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-022</div>
+              <button class="share-btn" onclick="shareImg('DSR-022.jpg', 'Fadali Future For Furniture', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-022', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-023.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-023.jpg" src="" alt="Led aydınlatmalı gardrop" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-023</div>
+              <button class="share-btn" onclick="shareImg('DSR-023.jpg', 'Led aydınlatmalı gardrop', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-023', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-024.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-024.jpg" src="" alt="Modern Illuminated Walk-In Closet" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-024</div>
+              <button class="share-btn" onclick="shareImg('DSR-024.jpg', 'Modern Illuminated Walk-In Closet', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-024', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-025.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-025.jpg" src="" alt="MVIMG_20260425_185024" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-025</div>
+              <button class="share-btn" onclick="shareImg('DSR-025.jpg', 'MVIMG_20260425_185024', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-025', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-026.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-026.jpg" src="" alt="PU-finished wardrobes designed by Selato" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-026</div>
+              <button class="share-btn" onclick="shareImg('DSR-026.jpg', 'PU-finished wardrobes designed by Selato', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-026', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-027.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-027.jpg" src="" alt="Sleek modern wardrobe with integrated LED shelving, gold accents, and an ultra-wide moody finish" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-027</div>
+              <button class="share-btn" onclick="shareImg('DSR-027.jpg', 'Sleek modern wardrobe with integrated LED shelving, gold accents, and an ultra-wide moody finish', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-027', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-028.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-028.jpg" src="" alt="Ultra-Wide Luxury Wardrobe with Floating Shelves &amp; Hidden LED Accents" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-028</div>
+              <button class="share-btn" onclick="shareImg('DSR-028.jpg', 'Ultra-Wide Luxury Wardrobe with Floating Shelves &amp; Hidden LED Accents', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-028', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-029.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-029.jpg" src="" alt="تصوير من المحل ✨" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-029</div>
+              <button class="share-btn" onclick="shareImg('DSR-029.jpg', 'تصوير من المحل ✨', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-029', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-030.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-030.jpg" src="" alt="خزانة ملابس ٠٥٠٠٨٣١٨٦٦" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-030</div>
+              <button class="share-btn" onclick="shareImg('DSR-030.jpg', 'خزانة ملابس ٠٥٠٠٨٣١٨٦٦', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-030', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-031.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-031.jpg" src="" alt="دريسنج" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-031</div>
+              <button class="share-btn" onclick="shareImg('DSR-031.jpg', 'دريسنج', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-031', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-032.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-032.jpg" src="" alt="دولاب ب تصاميم جميلة الشكل وهادئه" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-032</div>
+              <button class="share-btn" onclick="shareImg('DSR-032.jpg', 'دولاب ب تصاميم جميلة الشكل وهادئه', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-032', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-033.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-033.jpg" src="" alt="download (19)" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-033</div>
+              <button class="share-btn" onclick="shareImg('DSR-033.jpg', 'download (19)', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-033', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-034.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-034.jpg" src="" alt="_منجرة البيت الإلماني_ on Instagram" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-034</div>
+              <button class="share-btn" onclick="shareImg('DSR-034.jpg', '_منجرة البيت الإلماني_ on Instagram', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-034', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-035.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-035.jpg" src="" alt="Gemini_Generated_Image_grnzi4grnzi4grnz" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-035</div>
+              <button class="share-btn" onclick="shareImg('DSR-035.jpg', 'Gemini_Generated_Image_grnzi4grnzi4grnz', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-035', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item DressingRooms show">
+        <div class="card" onclick="lbOpen('DSR-036.jpg')">
+          <div class="card-img-wrap">
+            <img data-src="media/thumb/DSR-036.jpg" src="" alt="Gemini_Generated_Image_4wg1yr4wg1yr4wg1" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="id-badge" style="margin-bottom:0;">DSR-036</div>
+              <button class="share-btn" onclick="shareImg('DSR-036.jpg', 'Gemini_Generated_Image_4wg1yr4wg1yr4wg1', event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+              </button>
+              <button class="fav-btn" onclick="toggleFav('DSR-036', event)">&#x2764;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+  </div>
+  
+<footer>
+  <h4>Dar Al Ameer Factory</h4>
+  <p>Email: dar.alameer2004@gmail.com &nbsp;|&nbsp; Phone: 07504532559</p>
+  <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7">&copy; 2026 Dar Al Ameer Factory. All Rights Reserved.</p>
+</footer>
+
+  <script>
+    // Lazy load
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if(e.isIntersecting) {
+          const img = e.target;
+          img.src = img.dataset.src;
+          img.onload = () => img.classList.add('loaded');
+          observer.unobserve(img);
+        }
+      })
+    }, {rootMargin: '200px'});
+    document.querySelectorAll('img[data-src]').forEach(img => observer.observe(img));
+
+    // Lightbox
+    const imgs = ["DSR-001.jpg","DSR-002.jpg","DSR-003.jpg","DSR-004.jpg","DSR-005.jpg","DSR-006.jpg","DSR-007.jpg","DSR-008.jpg","DSR-009.jpg","DSR-010.jpg","DSR-011.jpg","DSR-012.jpg","DSR-013.jpg","DSR-014.jpg","DSR-015.jpg","DSR-016.jpg","DSR-017.jpg","DSR-018.jpg","DSR-019.jpg","DSR-020.jpg","DSR-021.jpg","DSR-022.jpg","DSR-023.jpg","DSR-024.jpg","DSR-025.jpg","DSR-026.jpg","DSR-027.jpg","DSR-028.jpg","DSR-029.jpg","DSR-030.jpg","DSR-031.jpg","DSR-032.jpg","DSR-033.jpg","DSR-034.jpg","DSR-035.jpg","DSR-036.jpg"];
+    let idx = 0;
+    const lb = document.getElementById('lb');
+    const lbImg = document.getElementById('lbImg');
+    const lbInfo = document.getElementById('lbInfo');
+    const lbSpin = document.getElementById('lbSpin');
+    
+    function lbOpen(fn) {
+      idx = imgs.indexOf(fn);
+      if(idx < 0) idx = 0;
+      _lbShow();
+      lb.classList.add('active');
+    }
+    
+    function _lbShow() {
+      const fn = imgs[idx];
+      lbImg.style.opacity = 0;
+      lbSpin.classList.add('active');
+      lbInfo.textContent = fn;
+      const tmp = new Image();
+      tmp.onload = () => {
+        lbImg.src = tmp.src;
+        lbImg.style.opacity = 1;
+        lbSpin.classList.remove('active');
+      };
+      tmp.src = 'media/full/' + fn;
+    }
+    
+    function lbClose() {
+      lb.classList.remove('active');
+    }
+    
+    function lbNav(d, e) {
+      if(e) e.stopPropagation();
+      idx = (idx + d + imgs.length) % imgs.length;
+      _lbShow();
+    }
+    
+    // Close on background click
+    lb.addEventListener('click', (e) => {
+      if(e.target === lb || e.target.classList.contains('lb-content')) lbClose();
+    });
+    
+    document.addEventListener('keydown', e => {
+      if(!lb.classList.contains('active')) return;
+      if(e.key === 'Escape') lbClose();
+      if(e.key === 'ArrowLeft') lbNav(-1);
+      if(e.key === 'ArrowRight') lbNav(1);
+    });
+
+    // Favorites Logic
+    function getFavs() { return JSON.parse(localStorage.getItem('daralameer_favs') || '[]'); }
+    function toggleFav(id, e) {
+      e.stopPropagation();
+      let favs = getFavs();
+      if(favs.includes(id)) favs = favs.filter(x => x !== id);
+      else favs.push(id);
+      localStorage.setItem('daralameer_favs', JSON.stringify(favs));
+      updateFavIcons();
+      if(document.body.dataset.tab === 'favorites') renderFavs();
+    }
+    function updateFavIcons() {
+      const favs = getFavs();
+      document.querySelectorAll('.fav-btn').forEach(btn => {
+        const match = btn.getAttribute('onclick').match(/'([^']+)'/);
+        if(match && favs.includes(match[1])) btn.classList.add('favorited');
+        else btn.classList.remove('favorited');
+      });
+    }
+    function renderFavs() {
+      if(document.body.dataset.tab !== 'favorites') return;
+      const favs = getFavs();
+      document.querySelectorAll('.gallery-item').forEach(item => {
+        const btn = item.querySelector('.fav-btn');
+        if(btn) {
+           const match = btn.getAttribute('onclick').match(/'([^']+)'/);
+           if(match && favs.includes(match[1])) item.style.display = 'block';
+           else item.style.display = 'none';
+        }
+      });
+      if(favs.length === 0) {
+         let empty = document.getElementById('empty-favs');
+         if(!empty) {
+            empty = document.createElement('div');
+            empty.id = 'empty-favs';
+            empty.innerHTML = '<h3 style="color:var(--muted); text-align:center; padding: 40px; margin-top: 40px;">No favorites yet! Browse the gallery and click the heart icon to save items here.</h3>';
+            document.querySelector('.gallery-grid').appendChild(empty);
+         }
+         empty.style.display = 'block';
+      } else {
+         const empty = document.getElementById('empty-favs');
+         if(empty) empty.style.display = 'none';
+      }
+    }
+    
+    // Scroll to Top
+    const fab = document.createElement('button');
+    fab.className = 'fab-top';
+    fab.innerHTML = '&#8679;';
+    fab.onclick = () => window.scrollTo({top: 0, behavior: 'smooth'});
+    document.body.appendChild(fab);
+    let lastScrollY = window.scrollY;
+    window.addEventListener('scroll', () => {
+       if(window.scrollY > 300) fab.classList.add('show');
+       else fab.classList.remove('show');
+       
+       const currentScrollY = window.scrollY;
+       const nav = document.querySelector('.navbar');
+       const tabs = document.querySelector('.filter-tabs');
+       if (currentScrollY > 100 && currentScrollY > lastScrollY) {
+           if(nav) nav.classList.add('nav-hidden');
+           if(tabs) tabs.classList.add('nav-hidden');
+       } else {
+           if(nav) nav.classList.remove('nav-hidden');
+           if(tabs) tabs.classList.remove('nav-hidden');
+       }
+       lastScrollY = currentScrollY;
+    });
+
+    // Share Logic
+    function shareImg(webName, title, e) {
+      e.stopPropagation();
+      const imgUrl = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, '/') + 'media/full/' + webName;
+      if (navigator.share) {
+        navigator.share({
+          title: title,
+          text: 'Check out this project from Dar Al Ameer!',
+          url: imgUrl
+        }).catch(err => console.log('Share failed:', err));
+      } else {
+        navigator.clipboard.writeText(imgUrl).then(() => alert('Image link copied to clipboard!'));
+      }
+    }
+
+    // Initialize
+    updateFavIcons();
+    if(document.body.dataset.tab === 'favorites') {
+       renderFavs();
+       document.querySelectorAll('.gallery-item').forEach(item => {
+           const btn = item.querySelector('.fav-btn');
+           if(!btn) return;
+           const match = btn.getAttribute('onclick').match(/'([^']+)'/);
+           if(!match || !getFavs().includes(match[1])) item.style.display = 'none';
+       });
+    }
+  </script>
+  <script src="translations.js"></script>
+</body></html>
