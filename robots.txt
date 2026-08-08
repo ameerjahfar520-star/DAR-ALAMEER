@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ameerjahfar520-star.github.io/DAR-ALAMEER/sitemap.xml

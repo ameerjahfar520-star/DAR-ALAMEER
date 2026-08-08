@@ -5,10 +5,21 @@
   <title>Dar Al Ameer Factory</title>
   <meta name="description" content="Premium Aluminum, PVC and Wood Manufacturing — Dar Al Ameer Factory">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=639215259278183984">
+  <link rel="stylesheet" href="styles.css?v=639218293527938252">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icon-512.png">
   <link rel="icon" sizes="512x512" href="icon-512.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Dar Al Ameer Factory">
+  <meta property="og:title" content="Dar Al Ameer Factory — Premium Aluminum, PVC &amp; Wood">
+  <meta property="og:description" content="Premium Aluminum, PVC and Wood Manufacturing. Kitchen cabinets, windows, doors, decorations and more.">
+  <meta property="og:image" content="https://ameerjahfar520-star.github.io/DAR-ALAMEER/icon-512.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dar Al Ameer Factory — Premium Aluminum, PVC &amp; Wood">
+  <meta name="twitter:description" content="Premium Aluminum, PVC and Wood Manufacturing. Kitchen cabinets, windows, doors, decorations and more.">
+  <meta name="twitter:image" content="https://ameerjahfar520-star.github.io/DAR-ALAMEER/icon-512.png">
+  <script type="application/ld+json">{  "@context": "https://schema.org",  "@type": "LocalBusiness",  "name": "Dar Al Ameer Factory",  "image": "https://ameerjahfar520-star.github.io/DAR-ALAMEER/icon-512.png",  "url": "https://ameerjahfar520-star.github.io/DAR-ALAMEER/index.html",  "email": "dar.alameer2004@gmail.com",  "telephone": "07504532559",    "sameAs": [                "https://ameerjahfar520-star.github.io/DAR-ALAMEER/"  ]}</script>
 </head>
 <body>
   
@@ -21,9 +32,15 @@
   <ul class="nav-links" id="navMenu">
     <li><a href="index.html" data-i18n="nav_home">Home</a></li>
     <li><a href="gallery.html" data-i18n="nav_gallery">Gallery</a></li>
+    <li><a href="albums.html" data-i18n="nav_albums">Projects</a></li>
     <li><a href="about.html" data-i18n="nav_about">About Us</a></li>
+    <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
     <li class="lang-switcher" style="display: flex; gap: 0.5rem; align-items: center; margin-left: auto; padding-left: 1rem;">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: rgba(255,255,255,0.7);"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+      <button class="nav-share-btn" onclick="shareSite(event)" title="Share this site">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+        <span data-i18n="nav_share">Share</span>
+      </button>
+      <button onclick="toggleTheme()" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: #fff; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;" title="Toggle light/dark">🌓</button>
       <button onclick="setLanguage('en')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: #fff; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">EN</button>
       <button onclick="setLanguage('ar')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: #fff; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">AR</button>
       <button onclick="setLanguage('ku')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: #fff; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">KU</button>
@@ -32,14 +49,70 @@
 </nav>
   <section class="hero">
     <h1 data-i18n="hero_title">DAR AL AMEER Factory</h1>
-    <p data-i18n="hero_subtitle">Premium Aluminum &amp; Ketchen Cabenet Manufacturing</p>
+    <p data-i18n="hero_subtitle">Premium Aluminum &amp; Kitchen Cabinet Manufacturing</p>
     <a href="gallery.html" class="btn-primary" data-i18n="nav_gallery">View Our Portfolio</a>
   </section>
   
 <footer>
   <h4>Dar Al Ameer Factory</h4>
   <p>Email: dar.alameer2004@gmail.com &nbsp;|&nbsp; Phone: 07504532559</p>
+  
   <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7">&copy; 2026 Dar Al Ameer Factory. All Rights Reserved.</p>
 </footer>
+  
+  <script>
+    // ── Theme toggle (light/dark) ──
+    function applyTheme(t) {
+      document.documentElement.setAttribute('data-theme', t);
+      try { localStorage.setItem('site_theme', t); } catch(e) {}
+    }
+    function toggleTheme() {
+      const cur = document.documentElement.getAttribute('data-theme') || 'dark';
+      applyTheme(cur === 'dark' ? 'light' : 'dark');
+    }
+    (function() {
+      let t = null;
+      try { t = localStorage.getItem('site_theme'); } catch(e) {}
+      if (!t) t = 'dark';
+      applyTheme(t);
+    })();
+
+    // ── Share helpers ──
+    function showToast(msg) {
+      let toast = document.getElementById('site-toast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'site-toast';
+        toast.className = 'toast-msg';
+        document.body.appendChild(toast);
+      }
+      toast.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> ' + msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+    function shareSite(e) {
+      if (e) e.stopPropagation();
+      const siteUrl = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '/');
+      const title = document.title || 'Dar Al Ameer Factory';
+      if (navigator.share) {
+        navigator.share({ title: title, text: 'Check out Dar Al Ameer Factory portfolio & products!', url: siteUrl }).catch(()=>{});
+      } else {
+        navigator.clipboard.writeText(siteUrl).then(() => showToast('Website link copied to clipboard!'));
+      }
+    }
+    function shareImg(webName, title, e) {
+      if (e) e.stopPropagation();
+      const imgUrl = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '/') + 'media/full/' + webName;
+      if (navigator.share) {
+        navigator.share({ title: title || 'Dar Al Ameer Project', text: 'Check out this project from Dar Al Ameer!', url: imgUrl }).catch(()=>{});
+      } else {
+        navigator.clipboard.writeText(imgUrl).then(() => showToast('Image link copied to clipboard!'));
+      }
+    }
+    function shareWhatsapp(url, text) {
+      const u = 'https://wa.me/?text=' + encodeURIComponent((text || '') + ' ' + url);
+      window.open(u, '_blank');
+    }
+  </script>
   <script src="translations.js"></script>
 </body></html>

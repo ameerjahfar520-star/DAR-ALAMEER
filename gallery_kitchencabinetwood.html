@@ -4,8 +4,19 @@
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Our Portfolio — Dar Al Ameer Factory</title>
   <meta name="description" content="Browse our complete portfolio: kitchen cabinets, aluminum windows, doors, decorations and more.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Dar Al Ameer Factory">
+  <meta property="og:title" content="Our Portfolio — Dar Al Ameer Factory">
+  <meta property="og:description" content="Browse our complete portfolio: kitchen cabinets, aluminum windows, doors, decorations and more.">
+  <meta property="og:image" content="https://ameerjahfar520-star.github.io/DAR-ALAMEER/icon-512.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Our Portfolio — Dar Al Ameer Factory">
+  <meta name="twitter:description" content="Browse our complete portfolio: kitchen cabinets, aluminum windows, doors, decorations and more.">
+  <meta name="twitter:image" content="https://ameerjahfar520-star.github.io/DAR-ALAMEER/icon-512.png">
+  <script type="application/ld+json">{  "@context": "https://schema.org",  "@type": "LocalBusiness",  "name": "Dar Al Ameer Factory",  "image": "https://ameerjahfar520-star.github.io/DAR-ALAMEER/icon-512.png",  "url": "https://ameerjahfar520-star.github.io/DAR-ALAMEER/index.html",  "email": "dar.alameer2004@gmail.com",  "telephone": "07504532559",    "sameAs": [                "https://ameerjahfar520-star.github.io/DAR-ALAMEER/"  ]}</script>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=639215259278183984">
+  <link rel="stylesheet" href="styles.css?v=639218293527938252">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icon-512.png">
   <link rel="icon" sizes="512x512" href="icon-512.png">
@@ -21,9 +32,15 @@
   <ul class="nav-links" id="navMenu">
     <li><a href="index.html" data-i18n="nav_home">Home</a></li>
     <li><a href="gallery.html" data-i18n="nav_gallery">Gallery</a></li>
+    <li><a href="albums.html" data-i18n="nav_albums">Projects</a></li>
     <li><a href="about.html" data-i18n="nav_about">About Us</a></li>
+    <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
     <li class="lang-switcher" style="display: flex; gap: 0.5rem; align-items: center; margin-left: auto; padding-left: 1rem;">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: rgba(255,255,255,0.7);"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+      <button class="nav-share-btn" onclick="shareSite(event)" title="Share this site">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+        <span data-i18n="nav_share">Share</span>
+      </button>
+      <button onclick="toggleTheme()" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: #fff; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;" title="Toggle light/dark">🌓</button>
       <button onclick="setLanguage('en')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: #fff; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">EN</button>
       <button onclick="setLanguage('ar')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: #fff; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">AR</button>
       <button onclick="setLanguage('ku')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: #fff; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">KU</button>
@@ -60,7 +77,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-001.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-001.jpg" alt="download (1)" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-001.jpg" srcset="media/w480/KW-001.jpg 480w, media/w800/KW-001.jpg 800w, media/w1200/KW-001.jpg 1200w, media/w1920/KW-001.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (1)" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -77,7 +94,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-002.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-002.jpg" alt="download (2)" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-002.jpg" srcset="media/w480/KW-002.jpg 480w, media/w800/KW-002.jpg 800w, media/w1200/KW-002.jpg 1200w, media/w1920/KW-002.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (2)" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -94,7 +111,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-003.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-003.jpg" alt="download (3)" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-003.jpg" srcset="media/w480/KW-003.jpg 480w, media/w800/KW-003.jpg 800w, media/w1200/KW-003.jpg 1200w, media/w1920/KW-003.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (3)" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -111,7 +128,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-004.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-004.jpg" alt="download (4)" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-004.jpg" srcset="media/w480/KW-004.jpg 480w, media/w800/KW-004.jpg 800w, media/w1200/KW-004.jpg 1200w, media/w1920/KW-004.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (4)" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -128,7 +145,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-005.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-005.jpg" alt="download (5)" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-005.jpg" srcset="media/w480/KW-005.jpg 480w, media/w800/KW-005.jpg 800w, media/w1200/KW-005.jpg 1200w, media/w1920/KW-005.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (5)" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -145,7 +162,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-006.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-006.jpg" alt="download (6)" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-006.jpg" srcset="media/w480/KW-006.jpg 480w, media/w800/KW-006.jpg 800w, media/w1200/KW-006.jpg 1200w, media/w1920/KW-006.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (6)" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -162,7 +179,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-007.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-007.jpg" alt="download (7)" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-007.jpg" srcset="media/w480/KW-007.jpg 480w, media/w800/KW-007.jpg 800w, media/w1200/KW-007.jpg 1200w, media/w1920/KW-007.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (7)" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -179,7 +196,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-008.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-008.jpg" alt="download (8)" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-008.jpg" srcset="media/w480/KW-008.jpg 480w, media/w800/KW-008.jpg 800w, media/w1200/KW-008.jpg 1200w, media/w1920/KW-008.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (8)" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -196,7 +213,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-009.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-009.jpg" alt="download (9)" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-009.jpg" srcset="media/w480/KW-009.jpg 480w, media/w800/KW-009.jpg 800w, media/w1200/KW-009.jpg 1200w, media/w1920/KW-009.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (9)" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -213,7 +230,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-010.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-010.jpg" alt="download (10)" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-010.jpg" srcset="media/w480/KW-010.jpg 480w, media/w800/KW-010.jpg 800w, media/w1200/KW-010.jpg 1200w, media/w1920/KW-010.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (10)" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -230,7 +247,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-011.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-011.jpg" alt="download (11)" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-011.jpg" srcset="media/w480/KW-011.jpg 480w, media/w800/KW-011.jpg 800w, media/w1200/KW-011.jpg 1200w, media/w1920/KW-011.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (11)" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -247,7 +264,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-012.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-012.jpg" alt="download" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-012.jpg" srcset="media/w480/KW-012.jpg 480w, media/w800/KW-012.jpg 800w, media/w1200/KW-012.jpg 1200w, media/w1920/KW-012.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -264,7 +281,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-013.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-013.jpg" alt="Élégante and co - ❤️❤️❤️ _ Facebook" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-013.jpg" srcset="media/w480/KW-013.jpg 480w, media/w800/KW-013.jpg 800w, media/w1200/KW-013.jpg 1200w, media/w1920/KW-013.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Élégante and co - ❤️❤️❤️ _ Facebook" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -281,7 +298,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-014.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-014.jpg" alt="Estilos de renovar el rincón del salón" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-014.jpg" srcset="media/w480/KW-014.jpg 480w, media/w800/KW-014.jpg 800w, media/w1200/KW-014.jpg 1200w, media/w1920/KW-014.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Estilos de renovar el rincón del salón" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -298,7 +315,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-015.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-015.jpg" alt="Home Decor" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-015.jpg" srcset="media/w480/KW-015.jpg 480w, media/w800/KW-015.jpg 800w, media/w1200/KW-015.jpg 1200w, media/w1920/KW-015.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Home Decor" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -315,7 +332,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-016.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-016.jpg" alt="home-interior-decorated-brown-shades" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-016.jpg" srcset="media/w480/KW-016.jpg 480w, media/w800/KW-016.jpg 800w, media/w1200/KW-016.jpg 1200w, media/w1920/KW-016.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="home-interior-decorated-brown-shades" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -332,7 +349,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-017.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-017.jpg" alt="Modern Grey L-Shaped Kitchen Ideas for a Luxury Home" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-017.jpg" srcset="media/w480/KW-017.jpg 480w, media/w800/KW-017.jpg 800w, media/w1200/KW-017.jpg 1200w, media/w1920/KW-017.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Modern Grey L-Shaped Kitchen Ideas for a Luxury Home" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -349,7 +366,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-018.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-018.jpg" alt="Modern Kitchen Ideas That Make a Bold Statement" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-018.jpg" srcset="media/w480/KW-018.jpg 480w, media/w800/KW-018.jpg 800w, media/w1200/KW-018.jpg 1200w, media/w1920/KW-018.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Modern Kitchen Ideas That Make a Bold Statement" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -366,7 +383,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-019.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-019.jpg" alt="Modern Luxury Kitchen Ideas _ White &amp; Wood Kitchen Design with Marble Island" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-019.jpg" srcset="media/w480/KW-019.jpg 480w, media/w800/KW-019.jpg 800w, media/w1200/KW-019.jpg 1200w, media/w1920/KW-019.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Modern Luxury Kitchen Ideas _ White &amp; Wood Kitchen Design with Marble Island" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -383,7 +400,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-020.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-020.jpg" alt="modern-kitchen-interior-with-colorful-cabinets-sink-minimal-kitchen-furniture-design" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-020.jpg" srcset="media/w480/KW-020.jpg 480w, media/w800/KW-020.jpg 800w, media/w1200/KW-020.jpg 1200w, media/w1920/KW-020.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="modern-kitchen-interior-with-colorful-cabinets-sink-minimal-kitchen-furniture-design" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -400,7 +417,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-021.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-021.jpg" alt="modern-kitchen-unit-builtin-appliances-matte-blue-cabinets" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-021.jpg" srcset="media/w480/KW-021.jpg 480w, media/w800/KW-021.jpg 800w, media/w1200/KW-021.jpg 1200w, media/w1920/KW-021.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="modern-kitchen-unit-builtin-appliances-matte-blue-cabinets" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -417,7 +434,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-022.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-022.jpg" alt="photo" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-022.jpg" srcset="media/w480/KW-022.jpg 480w, media/w800/KW-022.jpg 800w, media/w1200/KW-022.jpg 1200w, media/w1920/KW-022.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="photo" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -434,7 +451,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-023.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-023.jpg" alt="traditional-pantry-closet-furnishings-and-cabinetry-img~2001924b0827a5c0_14-0730-1-7efb066" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-023.jpg" srcset="media/w480/KW-023.jpg 480w, media/w800/KW-023.jpg 800w, media/w1200/KW-023.jpg 1200w, media/w1920/KW-023.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="traditional-pantry-closet-furnishings-and-cabinetry-img~2001924b0827a5c0_14-0730-1-7efb066" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -451,7 +468,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-024.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-024.jpg" alt="Ultra Modern Platinum Gray Kitchen Design with Glossy Cabinets &amp; White Granite Countertops" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-024.jpg" srcset="media/w480/KW-024.jpg 480w, media/w800/KW-024.jpg 800w, media/w1200/KW-024.jpg 1200w, media/w1920/KW-024.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Ultra Modern Platinum Gray Kitchen Design with Glossy Cabinets &amp; White Granite Countertops" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -468,7 +485,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-025.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-025.jpg" alt="3d-rendering-white-minimal-kitchen-with-wood-decoration" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-025.jpg" srcset="media/w480/KW-025.jpg 480w, media/w800/KW-025.jpg 800w, media/w1200/KW-025.jpg 1200w, media/w1920/KW-025.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="3d-rendering-white-minimal-kitchen-with-wood-decoration" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -485,7 +502,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-026.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-026.jpg" alt="10 idées modernes pour une petite cuisine_ déco chic et fonctionnelle à adopter" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-026.jpg" srcset="media/w480/KW-026.jpg 480w, media/w800/KW-026.jpg 800w, media/w1200/KW-026.jpg 1200w, media/w1920/KW-026.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="10 idées modernes pour une petite cuisine_ déco chic et fonctionnelle à adopter" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -502,7 +519,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-027.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-027.jpg" alt="29 Charcoal Gray Kitchen Cabinets That Make Every Meal Feel Chic" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-027.jpg" srcset="media/w480/KW-027.jpg 480w, media/w800/KW-027.jpg 800w, media/w1200/KW-027.jpg 1200w, media/w1920/KW-027.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="29 Charcoal Gray Kitchen Cabinets That Make Every Meal Feel Chic" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -519,7 +536,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-028.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-028.jpg" alt="29 Elegant Light Grey Kitchen Cabinets That Feel Subtle Yet Stylish" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-028.jpg" srcset="media/w480/KW-028.jpg 480w, media/w800/KW-028.jpg 800w, media/w1200/KW-028.jpg 1200w, media/w1920/KW-028.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="29 Elegant Light Grey Kitchen Cabinets That Feel Subtle Yet Stylish" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -536,7 +553,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-029.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-029.jpg" alt="cedarview-residence-root-architecture-img~17e168cc0b9c0636_14-2793-1-a85ed02" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-029.jpg" srcset="media/w480/KW-029.jpg 480w, media/w800/KW-029.jpg 800w, media/w1200/KW-029.jpg 1200w, media/w1920/KW-029.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="cedarview-residence-root-architecture-img~17e168cc0b9c0636_14-2793-1-a85ed02" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -553,7 +570,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-030.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-030.jpg" alt="corner-blue-kitchen-with-wooden-countertop-modern-furniture-set-with-copper-hardware" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-030.jpg" srcset="media/w480/KW-030.jpg 480w, media/w800/KW-030.jpg 800w, media/w1200/KW-030.jpg 1200w, media/w1920/KW-030.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="corner-blue-kitchen-with-wooden-countertop-modern-furniture-set-with-copper-hardware" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -570,7 +587,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-031.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-031.jpg" alt="Gemini_Generated_Image_g313vig313vig313" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-031.jpg" srcset="media/w480/KW-031.jpg 480w, media/w800/KW-031.jpg 800w, media/w1200/KW-031.jpg 1200w, media/w1920/KW-031.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Gemini_Generated_Image_g313vig313vig313" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -587,7 +604,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-032.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-032.jpg" alt="Gemini_Generated_Image_k0m82dk0m82dk0m8" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-032.jpg" srcset="media/w480/KW-032.jpg 480w, media/w800/KW-032.jpg 800w, media/w1200/KW-032.jpg 1200w, media/w1920/KW-032.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Gemini_Generated_Image_k0m82dk0m82dk0m8" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -604,7 +621,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-033.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-033.jpg" alt="Gemini_Generated_Image_ld3hzlld3hzlld3h" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-033.jpg" srcset="media/w480/KW-033.jpg 480w, media/w800/KW-033.jpg 800w, media/w1200/KW-033.jpg 1200w, media/w1920/KW-033.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Gemini_Generated_Image_ld3hzlld3hzlld3h" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -621,7 +638,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-034.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-034.jpg" alt="Gemini_Generated_Image_nmu3yonmu3yonmu3" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-034.jpg" srcset="media/w480/KW-034.jpg 480w, media/w800/KW-034.jpg 800w, media/w1200/KW-034.jpg 1200w, media/w1920/KW-034.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Gemini_Generated_Image_nmu3yonmu3yonmu3" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -638,7 +655,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-035.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-035.jpg" alt="Gemini_Generated_Image_rt7qtyrt7qtyrt7q" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-035.jpg" srcset="media/w480/KW-035.jpg 480w, media/w800/KW-035.jpg 800w, media/w1200/KW-035.jpg 1200w, media/w1920/KW-035.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Gemini_Generated_Image_rt7qtyrt7qtyrt7q" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -655,7 +672,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-036.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-036.jpg" alt="Gemini_Generated_Image_vas98tvas98tvas9" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-036.jpg" srcset="media/w480/KW-036.jpg 480w, media/w800/KW-036.jpg 800w, media/w1200/KW-036.jpg 1200w, media/w1920/KW-036.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Gemini_Generated_Image_vas98tvas98tvas9" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -672,7 +689,7 @@
       <div class="gallery-item KitchenCabinetWood show">
         <div class="card" onclick="lbOpen('KW-037.jpg')">
           <div class="card-img-wrap">
-            <img src="media/thumb/KW-037.jpg" alt="Gemini_Generated_Image_7oiz3u7oiz3u7oiz" loading="lazy" decoding="async">
+            <img src="media/thumb/KW-037.jpg" srcset="media/w480/KW-037.jpg 480w, media/w800/KW-037.jpg 800w, media/w1200/KW-037.jpg 1200w, media/w1920/KW-037.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Gemini_Generated_Image_7oiz3u7oiz3u7oiz" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="card-body-header">
@@ -692,6 +709,7 @@
 <footer>
   <h4>Dar Al Ameer Factory</h4>
   <p>Email: dar.alameer2004@gmail.com &nbsp;|&nbsp; Phone: 07504532559</p>
+  
   <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7">&copy; 2026 Dar Al Ameer Factory. All Rights Reserved.</p>
 </footer>
 
@@ -810,49 +828,6 @@
       }
     }
     
-    // Share & Toast Logic
-    function showToast(msg) {
-      let toast = document.getElementById('site-toast');
-      if (!toast) {
-        toast = document.createElement('div');
-        toast.id = 'site-toast';
-        toast.className = 'toast-msg';
-        document.body.appendChild(toast);
-      }
-      toast.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> ' + msg;
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 3000);
-    }
-
-    function shareSite(e) {
-      if (e) e.stopPropagation();
-      const siteUrl = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, '/');
-      const title = document.title || 'Dar Al Ameer Factory';
-      if (navigator.share) {
-        navigator.share({
-          title: title,
-          text: 'Check out Dar Al Ameer Factory portfolio & products!',
-          url: siteUrl
-        }).catch(err => console.log('Share failed:', err));
-      } else {
-        navigator.clipboard.writeText(siteUrl).then(() => showToast('Website link copied to clipboard!'));
-      }
-    }
-
-    function shareImg(webName, title, e) {
-      if (e) e.stopPropagation();
-      const imgUrl = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, '/') + 'media/full/' + webName;
-      if (navigator.share) {
-        navigator.share({
-          title: title || 'Dar Al Ameer Project',
-          text: 'Check out this project from Dar Al Ameer!',
-          url: imgUrl
-        }).catch(err => console.log('Share failed:', err));
-      } else {
-        navigator.clipboard.writeText(imgUrl).then(() => showToast('Image link copied to clipboard!'));
-      }
-    }
-
     // Scroll to Top
     const fab = document.createElement('button');
     fab.className = 'fab-top';
@@ -877,21 +852,6 @@
        lastScrollY = currentScrollY;
     });
 
-    // Share Logic
-    function shareImg(webName, title, e) {
-      e.stopPropagation();
-      const imgUrl = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, '/') + 'media/full/' + webName;
-      if (navigator.share) {
-        navigator.share({
-          title: title,
-          text: 'Check out this project from Dar Al Ameer!',
-          url: imgUrl
-        }).catch(err => console.log('Share failed:', err));
-      } else {
-        navigator.clipboard.writeText(imgUrl).then(() => alert('Image link copied to clipboard!'));
-      }
-    }
-
     // Initialize
     updateFavIcons();
     if(document.body.dataset.tab === 'favorites') {
@@ -902,6 +862,61 @@
            const match = btn.getAttribute('onclick').match(/'([^']+)'/);
            if(!match || !getFavs().includes(match[1])) item.style.display = 'none';
        });
+    }
+  </script>
+  
+  <script>
+    // ── Theme toggle (light/dark) ──
+    function applyTheme(t) {
+      document.documentElement.setAttribute('data-theme', t);
+      try { localStorage.setItem('site_theme', t); } catch(e) {}
+    }
+    function toggleTheme() {
+      const cur = document.documentElement.getAttribute('data-theme') || 'dark';
+      applyTheme(cur === 'dark' ? 'light' : 'dark');
+    }
+    (function() {
+      let t = null;
+      try { t = localStorage.getItem('site_theme'); } catch(e) {}
+      if (!t) t = 'dark';
+      applyTheme(t);
+    })();
+
+    // ── Share helpers ──
+    function showToast(msg) {
+      let toast = document.getElementById('site-toast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'site-toast';
+        toast.className = 'toast-msg';
+        document.body.appendChild(toast);
+      }
+      toast.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> ' + msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+    function shareSite(e) {
+      if (e) e.stopPropagation();
+      const siteUrl = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '/');
+      const title = document.title || 'Dar Al Ameer Factory';
+      if (navigator.share) {
+        navigator.share({ title: title, text: 'Check out Dar Al Ameer Factory portfolio & products!', url: siteUrl }).catch(()=>{});
+      } else {
+        navigator.clipboard.writeText(siteUrl).then(() => showToast('Website link copied to clipboard!'));
+      }
+    }
+    function shareImg(webName, title, e) {
+      if (e) e.stopPropagation();
+      const imgUrl = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '/') + 'media/full/' + webName;
+      if (navigator.share) {
+        navigator.share({ title: title || 'Dar Al Ameer Project', text: 'Check out this project from Dar Al Ameer!', url: imgUrl }).catch(()=>{});
+      } else {
+        navigator.clipboard.writeText(imgUrl).then(() => showToast('Image link copied to clipboard!'));
+      }
+    }
+    function shareWhatsapp(url, text) {
+      const u = 'https://wa.me/?text=' + encodeURIComponent((text || '') + ' ' + url);
+      window.open(u, '_blank');
     }
   </script>
   <script src="translations.js"></script>
