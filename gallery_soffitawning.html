@@ -16,7 +16,7 @@
   <meta name="twitter:image" content="https://ameerjahfar520-star.github.io/DAR-ALAMEER/icon-512.png">
   <script type="application/ld+json">{  "@context": "https://schema.org",  "@type": "LocalBusiness",  "name": "Dar Al Ameer Factory",  "image": "https://ameerjahfar520-star.github.io/DAR-ALAMEER/icon-512.png",  "url": "https://ameerjahfar520-star.github.io/DAR-ALAMEER/index.html",  "email": "dar.alameer2004@gmail.com",  "telephone": "07504532559",    "sameAs": [                "https://ameerjahfar520-star.github.io/DAR-ALAMEER/"  ]}</script>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=639218299717331714">
+  <link rel="stylesheet" href="styles.css?v=639218322591810204">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icon-512.png">
   <link rel="icon" sizes="512x512" href="icon-512.png">
@@ -41,9 +41,9 @@
         <span data-i18n="nav_share">Share</span>
       </button>
       <button onclick="toggleTheme()" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;" title="Toggle light/dark">🌓</button>
-      <button onclick="setLanguage('en')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">EN</button>
-      <button onclick="setLanguage('ar')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">AR</button>
-      <button onclick="setLanguage('ku')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">KU</button>
+      <button class="lang-btn" data-lang="en" onclick="setLanguage('en')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">EN</button>
+      <button class="lang-btn" data-lang="ar" onclick="setLanguage('ar')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">AR</button>
+      <button class="lang-btn" data-lang="ku" onclick="setLanguage('ku')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">KU</button>
     </li>
   </ul>
 </nav>
@@ -62,19 +62,29 @@
 
   <div class="container" style="padding-top: 100px; padding-bottom: 80px;">
     <h1 class="section-title" data-i18n="nav_gallery">Our Portfolio</h1>
-    <div class="filter-tabs">
-  <a href="gallery.html" class="tab-btn" data-i18n="filter_all">All Projects</a>
-  <a href="gallery_favorites.html" class="tab-btn">&#x2764; Favorites</a>
-  <a href="gallery_kitchencabinetwood.html" class="tab-btn" data-i18n="category_KitchenCabinetWood">Kitchen Cabinet Wood</a>
-  <a href="gallery_aluminumwindows.html" class="tab-btn" data-i18n="category_AluminumWindows">Aluminum Windows</a>
-  <a href="gallery_doors.html" class="tab-btn" data-i18n="category_Doors">Doors</a>
-  <a href="gallery_decorations.html" class="tab-btn" data-i18n="category_Decorations">Decorations</a>
-  <a href="gallery_soffitawning.html" class="tab-btn active" data-i18n="category_SoffitAwning">Soffit / Awning</a>
-  <a href="gallery_dressingrooms.html" class="tab-btn" data-i18n="category_DressingRooms">Dressing Rooms</a>
+    <div class="filter-bar">
+  <div class="filter-search">
+    <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='7'/><line x1='21' y1='21' x2='16.65' y2='16.65'/></svg>
+    <input id="catSearch" type="text" placeholder="Find a category…" data-i18n-placeholder="search_placeholder" oninput="filterChips(this.value)" aria-label="Search categories">
+  </div>
+  <div class="filter-scroll">
+    <button class="chip-arrow chip-prev" onclick="scrollChips(-1)" aria-label="Scroll left">‹</button>
+    <div class="chip-rail" id="chipRail">
+      <a href="gallery.html" class="chip" data-cat="all"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='3' width='18' height='18' rx='2'/><line x1='3' y1='9' x2='21' y2='9'/><line x1='3' y1='15' x2='21' y2='15'/><line x1='9' y1='3' x2='9' y2='21'/></svg><span data-i18n="filter_all">All</span></a>
+      <a href="gallery_favorites.html" class="chip" data-cat="favorites"><span style="font-size:1.1em">♥</span><span data-i18n="nav_favorites">Favorites</span></a>
+      <a href="gallery_kitchencabinetwood.html" class="chip" data-cat="kitchencabinetwood" data-name="kitchen cabinet wood"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='3' width='18' height='18' rx='2'/><line x1='3' y1='9' x2='21' y2='9'/><line x1='3' y1='15' x2='21' y2='15'/><line x1='9' y1='3' x2='9' y2='21'/></svg><span>Kitchen Cabinet Wood</span></a>
+      <a href="gallery_aluminumwindows.html" class="chip" data-cat="aluminumwindows" data-name="aluminum windows"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='16' rx='1'/><line x1='12' y1='4' x2='12' y2='20'/><line x1='3' y1='12' x2='21' y2='12'/></svg><span>Aluminum Windows</span></a>
+      <a href="gallery_doors.html" class="chip" data-cat="doors" data-name="doors"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M6 21V3h12v18'/><circle cx='15' cy='12' r='1.2'/></svg><span>Doors</span></a>
+      <a href="gallery_decorations.html" class="chip" data-cat="decorations" data-name="decorations"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9'/><path d='M12 3a9 9 0 0 0 0 18'/><path d='M3 12h18'/></svg><span>Decorations</span></a>
+      <a href="gallery_soffitawning.html" class="chip active" data-cat="soffitawning" data-name="soffit / awning"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 9l9-5 9 5'/><path d='M5 9v10h14V9'/><path d='M9 19v-6h6v6'/></svg><span>Soffit / Awning</span></a>
+      <a href="gallery_dressingrooms.html" class="chip" data-cat="dressingrooms" data-name="dressing rooms"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='3' width='7' height='18' rx='1'/><rect x='13' y='3' width='7' height='18' rx='1'/><circle cx='11' cy='12' r='1'/><circle cx='13' cy='12' r='1'/></svg><span>Dressing Rooms</span></a>
+    </div>
+    <button class="chip-arrow chip-next" onclick="scrollChips(1)" aria-label="Scroll right">›</button>
+  </div>
 </div>
 <div class="gallery-grid">
 
-      <div class="gallery-item SoffitAwning show">
+      <div class="gallery-item SoffitAwning show" data-tags="">
         <div class="card" onclick="lbOpen('SA-001.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/SA-001.jpg" srcset="media/w480/SA-001.jpg 480w, media/w800/SA-001.jpg 800w, media/w1200/SA-001.jpg 1200w, media/w1920/SA-001.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download" loading="lazy" decoding="async">
@@ -85,13 +95,13 @@
               <button class="share-btn" onclick="shareImg('SA-001.jpg', 'download', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('SA-001', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('SA-001', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item SoffitAwning show">
+      <div class="gallery-item SoffitAwning show" data-tags="">
         <div class="card" onclick="lbOpen('SA-002.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/SA-002.jpg" srcset="media/w480/SA-002.jpg 480w, media/w800/SA-002.jpg 800w, media/w1200/SA-002.jpg 1200w, media/w1920/SA-002.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Pergola Maintenance _ Azenco Outdoor" loading="lazy" decoding="async">
@@ -102,13 +112,13 @@
               <button class="share-btn" onclick="shareImg('SA-002.jpg', 'Pergola Maintenance _ Azenco Outdoor', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('SA-002', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('SA-002', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item SoffitAwning show">
+      <div class="gallery-item SoffitAwning show" data-tags="">
         <div class="card" onclick="lbOpen('SA-003.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/SA-003.jpg" srcset="media/w480/SA-003.jpg 480w, media/w800/SA-003.jpg 800w, media/w1200/SA-003.jpg 1200w, media/w1920/SA-003.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Cam Tavanlı Kış Bahçesi _ Modern ve Lüks Yaşam Alanı" loading="lazy" decoding="async">
@@ -119,13 +129,13 @@
               <button class="share-btn" onclick="shareImg('SA-003.jpg', 'Cam Tavanlı Kış Bahçesi _ Modern ve Lüks Yaşam Alanı', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('SA-003', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('SA-003', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item SoffitAwning show">
+      <div class="gallery-item SoffitAwning show" data-tags="">
         <div class="card" onclick="lbOpen('SA-004.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/SA-004.jpg" srcset="media/w480/SA-004.jpg 480w, media/w800/SA-004.jpg 800w, media/w1200/SA-004.jpg 1200w, media/w1920/SA-004.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (1)" loading="lazy" decoding="async">
@@ -136,13 +146,13 @@
               <button class="share-btn" onclick="shareImg('SA-004.jpg', 'download (1)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('SA-004', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('SA-004', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item SoffitAwning show">
+      <div class="gallery-item SoffitAwning show" data-tags="">
         <div class="card" onclick="lbOpen('SA-005.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/SA-005.jpg" srcset="media/w480/SA-005.jpg 480w, media/w800/SA-005.jpg 800w, media/w1200/SA-005.jpg 1200w, media/w1920/SA-005.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Gemini_Generated_Image_8noh408noh408noh" loading="lazy" decoding="async">
@@ -153,13 +163,13 @@
               <button class="share-btn" onclick="shareImg('SA-005.jpg', 'Gemini_Generated_Image_8noh408noh408noh', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('SA-005', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('SA-005', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item SoffitAwning show">
+      <div class="gallery-item SoffitAwning show" data-tags="">
         <div class="card" onclick="lbOpen('SA-006.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/SA-006.jpg" srcset="media/w480/SA-006.jpg 480w, media/w800/SA-006.jpg 800w, media/w1200/SA-006.jpg 1200w, media/w1920/SA-006.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Gemini_Generated_Image_eoyjv8eoyjv8eoyj" loading="lazy" decoding="async">
@@ -170,7 +180,7 @@
               <button class="share-btn" onclick="shareImg('SA-006.jpg', 'Gemini_Generated_Image_eoyjv8eoyjv8eoyj', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('SA-006', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('SA-006', event)">♡</button>
             </div>
           </div>
         </div>
@@ -271,8 +281,13 @@
       const favs = getFavs();
       document.querySelectorAll('.fav-btn').forEach(btn => {
         const match = btn.getAttribute('onclick').match(/'([^']+)'/);
-        if(match && favs.includes(match[1])) btn.classList.add('favorited');
-        else btn.classList.remove('favorited');
+        if(match && favs.includes(match[1])) {
+          btn.classList.add('favorited');
+          btn.textContent = '♥';
+        } else {
+          btn.classList.remove('favorited');
+          btn.textContent = '♡';
+        }
       });
     }
     function renderFavs() {
@@ -314,7 +329,7 @@
        
        const currentScrollY = window.scrollY;
        const nav = document.querySelector('.navbar');
-       const tabs = document.querySelector('.filter-tabs');
+       const tabs = document.querySelector('.filter-bar');
        if (currentScrollY > 100 && currentScrollY > lastScrollY) {
            if(nav) nav.classList.add('nav-hidden');
            if(tabs) tabs.classList.add('nav-hidden');
@@ -391,6 +406,31 @@
       const u = 'https://wa.me/?text=' + encodeURIComponent((text || '') + ' ' + url);
       window.open(u, '_blank');
     }
+
+    // ─── Filter bar: search chips + horizontal scroll + sub-feature filtering ─────
+    function filterChips(q) {
+      q = (q || '').trim().toLowerCase();
+      document.querySelectorAll('#chipRail .chip').forEach(c => {
+        const name = (c.getAttribute('data-name') || c.textContent || '').toLowerCase();
+        c.style.display = (!q || name.includes(q)) ? '' : 'none';
+      });
+    }
+    function scrollChips(dir) {
+      const rail = document.getElementById('chipRail');
+      if (rail) rail.scrollBy({ left: dir * 240, behavior: 'smooth' });
+    }
+    document.querySelectorAll('.subchip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.subchip').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const tag = (btn.getAttribute('data-tag') || '').toLowerCase();
+        document.querySelectorAll('.gallery-item').forEach(item => {
+          const tags = (item.getAttribute('data-tags') || '').toLowerCase();
+          const ok = !tag || tags.split(',').map(t => t.trim()).includes(tag);
+          item.style.display = ok ? '' : 'none';
+        });
+      });
+    });
   </script>
   <script src="translations.js"></script>
 </body></html>

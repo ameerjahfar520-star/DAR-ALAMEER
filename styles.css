@@ -24,11 +24,26 @@ a { text-decoration: none; color: inherit; }
 .section-title { font-size: 2.2rem; font-weight: 700; text-align: center; margin: 2rem 0 3rem; }
 
 /* Tabs */
-.filter-tabs { display: flex; gap: 10px; flex-wrap: nowrap; overflow-x: auto; -ms-overflow-style: none; scrollbar-width: none; margin-bottom: 3rem; position: sticky; top: 65px; z-index: 100; background: rgba(10,15,28,0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 15px 5%; border-bottom: 1px solid var(--border); transition: transform 0.3s ease, opacity 0.3s ease; }
-.filter-tabs::-webkit-scrollbar { display: none; }
-.filter-btn { flex-shrink: 0; }
-.filter-tabs.nav-hidden { transform: translateY(-300%); opacity: 0; pointer-events: none; }
-
+.filter-bar { position: sticky; top: 65px; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); padding: 14px 5% 12px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transition: transform 0.3s ease, opacity 0.3s ease; }
+.filter-bar.nav-hidden { transform: translateY(-300%); opacity: 0; pointer-events: none; }
+.filter-search { display: flex; align-items: center; gap: 8px; max-width: 420px; margin: 0 auto 12px; background: var(--card); border: 1px solid var(--border); border-radius: 30px; padding: 8px 16px; color: var(--muted); }
+.filter-search svg { width: 18px; height: 18px; flex-shrink: 0; }
+.filter-search input { flex: 1; border: none; background: none; outline: none; color: var(--text); font-family: inherit; font-size: 0.95rem; }
+.filter-scroll { display: flex; align-items: center; gap: 6px; }
+.chip-rail { display: flex; gap: 10px; overflow-x: auto; scroll-behavior: smooth; -ms-overflow-style: none; scrollbar-width: none; padding: 4px 2px; flex: 1; scroll-snap-type: x proximity; }
+.chip-rail::-webkit-scrollbar { display: none; }
+.chip { flex: 0 0 auto; scroll-snap-align: start; display: inline-flex; align-items: center; gap: 8px; background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 9px 18px; border-radius: 30px; font-size: 0.95rem; font-weight: 500; cursor: pointer; transition: all 0.25s ease; text-decoration: none; white-space: nowrap; }
+.chip svg { width: 18px; height: 18px; flex-shrink: 0; }
+.chip:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+.chip.active { background: var(--accent); border-color: var(--accent); color: #fff; box-shadow: 0 4px 14px var(--accent-glow); }
+.chip-arrow { flex: 0 0 auto; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--border); background: var(--card); color: var(--text); font-size: 1.4rem; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+.chip-arrow:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.subfeature-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 12px; }
+.subfeature-label { color: var(--muted); font-size: 0.85rem; margin-right: 4px; }
+.subchip { background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; font-family: inherit; }
+.subchip:hover { border-color: var(--accent); color: var(--accent); }
+.subchip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+@media (max-width: 768px) { .chip-arrow { display: none; } .chip { padding: 8px 14px; font-size: 0.88rem; } }
 .fab-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; border: none; cursor: pointer; opacity: 0; pointer-events: none; transition: 0.3s; box-shadow: 0 5px 15px var(--accent-glow); z-index: 99; }
 .fab-top.show { opacity: 1; pointer-events: auto; }
 .fab-top:hover { transform: translateY(-5px); }
@@ -40,6 +55,7 @@ a { text-decoration: none; color: inherit; }
 .share-btn:hover { color: #3b82f6; transform: scale(1.1); }
 .nav-share-btn { display: inline-flex; align-items: center; gap: 6px; background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.4); color: #60a5fa; padding: 6px 14px; border-radius: 20px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-family: inherit; margin-left: 0.5rem; }
 .nav-share-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); box-shadow: 0 4px 12px var(--accent-glow); transform: translateY(-2px); }
+.lang-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
 .toast-msg { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px); background: rgba(15, 23, 42, 0.95); border: 1px solid var(--accent); color: #fff; padding: 12px 24px; border-radius: 30px; font-size: 0.95rem; font-weight: 500; z-index: 10000; opacity: 0; pointer-events: none; transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); box-shadow: 0 10px 25px rgba(0,0,0,0.5); display: flex; align-items: center; gap: 8px; backdrop-filter: blur(8px); }
 .toast-msg.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 .site-watermark { position: fixed; bottom: 20px; left: 20px; width: 120px; opacity: 0.4; pointer-events: none; z-index: 50; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5)); }
@@ -107,7 +123,7 @@ footer p { color: var(--muted); margin: 0.5rem 0; font-size: 1rem; }
   --text: #0f172a; --muted: #475569; --border: rgba(0,0,0,0.08);
 }
 :root[data-theme='light'] body { background-image: radial-gradient(circle at 15% 50%, rgba(37,99,235,0.08), transparent 30%), radial-gradient(circle at 85% 10%, rgba(139,92,246,0.08), transparent 30%); }
-:root[data-theme='light'] .navbar, :root[data-theme='light'] .filter-tabs { background: rgba(255,255,255,0.9); }
+:root[data-theme='light'] .navbar, :root[data-theme='light'] .filter-bar { background: rgba(255,255,255,0.9); }
 :root[data-theme='light'] footer { background: rgba(244,246,251,0.95); }
 :root[data-theme='light'] .card-img-wrap { background: #e2e8f0; }
 

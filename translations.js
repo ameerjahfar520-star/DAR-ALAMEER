@@ -9,6 +9,12 @@ const translations = {
     'nav_share': 'Share',
     'theme_toggle': 'Toggle theme',
     'filter_all': 'All',
+    'nav_favorites': 'Favorites',
+    'search_placeholder': 'Find a category…',
+    'subfeature_label': 'Filter:',
+    'lang_en': 'EN',
+    'lang_ar': 'AR',
+    'lang_ku': 'KU',
     'connect_us': 'Connect With Us',
     'category_KitchenCabinetWood': 'Kitchen Cabinet Wood',
     'category_AluminumKitchenCabinet': 'Aluminum Kitchen Cabinet',
@@ -31,6 +37,12 @@ const translations = {
     'nav_share': 'مشاركة',
     'theme_toggle': 'تبديل الوضع',
     'filter_all': 'الكل',
+    'nav_favorites': 'المفضلة',
+    'search_placeholder': 'ابحث عن قسم…',
+    'subfeature_label': 'تصفية:',
+    'lang_en': 'EN',
+    'lang_ar': 'AR',
+    'lang_ku': 'KU',
     'connect_us': 'تواصل معنا',
     'category_KitchenCabinetWood': 'خزائن مطبخ خشب',
     'category_AluminumKitchenCabinet': 'خزائن مطبخ ألمنيوم',
@@ -52,6 +64,12 @@ const translations = {
     'nav_contact': 'پەیوەندی',
     'theme_toggle': 'گۆڕینی ڕووکار',
     'filter_all': 'هەموو',
+    'nav_favorites': 'دڵخوازەکان',
+    'search_placeholder': 'بەشێک بدۆزەرەوە…',
+    'subfeature_label': 'پاڵاوتن:',
+    'lang_en': 'EN',
+    'lang_ar': 'AR',
+    'lang_ku': 'KU',
     'connect_us': 'پەیوەندیمان پێوە بکە',
     'category_KitchenCabinetWood': 'کابینەی چێشتخانە دار',
     'category_AluminumKitchenCabinet': 'کابینەی چێشتخانە ئەلەمنیۆم',
@@ -77,6 +95,15 @@ function applyTranslations() {
     if (translations[lang][key]) {
       el.innerHTML = translations[lang][key];
     }
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (translations[lang][key]) {
+      el.setAttribute('placeholder', translations[lang][key]);
+    }
+  });
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active', b.getAttribute('data-lang') === lang);
   });
 }
 

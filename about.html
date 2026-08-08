@@ -5,7 +5,7 @@
   <title>About Us — Dar Al Ameer Factory</title>
   <meta name="description" content="Learn about Dar Al Ameer Factory: premium aluminum, PVC and wood craftsmanship.">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=639218299717331714">
+  <link rel="stylesheet" href="styles.css?v=639218322591810204">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icon-512.png">
   <link rel="icon" sizes="512x512" href="icon-512.png">
@@ -41,9 +41,9 @@
         <span data-i18n="nav_share">Share</span>
       </button>
       <button onclick="toggleTheme()" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;" title="Toggle light/dark">🌓</button>
-      <button onclick="setLanguage('en')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">EN</button>
-      <button onclick="setLanguage('ar')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">AR</button>
-      <button onclick="setLanguage('ku')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">KU</button>
+      <button class="lang-btn" data-lang="en" onclick="setLanguage('en')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">EN</button>
+      <button class="lang-btn" data-lang="ar" onclick="setLanguage('ar')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">AR</button>
+      <button class="lang-btn" data-lang="ku" onclick="setLanguage('ku')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">KU</button>
     </li>
   </ul>
 </nav>
@@ -118,6 +118,31 @@
       const u = 'https://wa.me/?text=' + encodeURIComponent((text || '') + ' ' + url);
       window.open(u, '_blank');
     }
+
+    // ─── Filter bar: search chips + horizontal scroll + sub-feature filtering ─────
+    function filterChips(q) {
+      q = (q || '').trim().toLowerCase();
+      document.querySelectorAll('#chipRail .chip').forEach(c => {
+        const name = (c.getAttribute('data-name') || c.textContent || '').toLowerCase();
+        c.style.display = (!q || name.includes(q)) ? '' : 'none';
+      });
+    }
+    function scrollChips(dir) {
+      const rail = document.getElementById('chipRail');
+      if (rail) rail.scrollBy({ left: dir * 240, behavior: 'smooth' });
+    }
+    document.querySelectorAll('.subchip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.subchip').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const tag = (btn.getAttribute('data-tag') || '').toLowerCase();
+        document.querySelectorAll('.gallery-item').forEach(item => {
+          const tags = (item.getAttribute('data-tags') || '').toLowerCase();
+          const ok = !tag || tags.split(',').map(t => t.trim()).includes(tag);
+          item.style.display = ok ? '' : 'none';
+        });
+      });
+    });
   </script>
   <script src="translations.js"></script>
 </body></html>

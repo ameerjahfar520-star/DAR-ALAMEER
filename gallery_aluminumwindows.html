@@ -16,7 +16,7 @@
   <meta name="twitter:image" content="https://ameerjahfar520-star.github.io/DAR-ALAMEER/icon-512.png">
   <script type="application/ld+json">{  "@context": "https://schema.org",  "@type": "LocalBusiness",  "name": "Dar Al Ameer Factory",  "image": "https://ameerjahfar520-star.github.io/DAR-ALAMEER/icon-512.png",  "url": "https://ameerjahfar520-star.github.io/DAR-ALAMEER/index.html",  "email": "dar.alameer2004@gmail.com",  "telephone": "07504532559",    "sameAs": [                "https://ameerjahfar520-star.github.io/DAR-ALAMEER/"  ]}</script>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=639218299717331714">
+  <link rel="stylesheet" href="styles.css?v=639218322591810204">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icon-512.png">
   <link rel="icon" sizes="512x512" href="icon-512.png">
@@ -41,9 +41,9 @@
         <span data-i18n="nav_share">Share</span>
       </button>
       <button onclick="toggleTheme()" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;" title="Toggle light/dark">🌓</button>
-      <button onclick="setLanguage('en')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">EN</button>
-      <button onclick="setLanguage('ar')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">AR</button>
-      <button onclick="setLanguage('ku')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">KU</button>
+      <button class="lang-btn" data-lang="en" onclick="setLanguage('en')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">EN</button>
+      <button class="lang-btn" data-lang="ar" onclick="setLanguage('ar')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">AR</button>
+      <button class="lang-btn" data-lang="ku" onclick="setLanguage('ku')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">KU</button>
     </li>
   </ul>
 </nav>
@@ -62,19 +62,29 @@
 
   <div class="container" style="padding-top: 100px; padding-bottom: 80px;">
     <h1 class="section-title" data-i18n="nav_gallery">Our Portfolio</h1>
-    <div class="filter-tabs">
-  <a href="gallery.html" class="tab-btn" data-i18n="filter_all">All Projects</a>
-  <a href="gallery_favorites.html" class="tab-btn">&#x2764; Favorites</a>
-  <a href="gallery_kitchencabinetwood.html" class="tab-btn" data-i18n="category_KitchenCabinetWood">Kitchen Cabinet Wood</a>
-  <a href="gallery_aluminumwindows.html" class="tab-btn active" data-i18n="category_AluminumWindows">Aluminum Windows</a>
-  <a href="gallery_doors.html" class="tab-btn" data-i18n="category_Doors">Doors</a>
-  <a href="gallery_decorations.html" class="tab-btn" data-i18n="category_Decorations">Decorations</a>
-  <a href="gallery_soffitawning.html" class="tab-btn" data-i18n="category_SoffitAwning">Soffit / Awning</a>
-  <a href="gallery_dressingrooms.html" class="tab-btn" data-i18n="category_DressingRooms">Dressing Rooms</a>
+    <div class="filter-bar">
+  <div class="filter-search">
+    <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='7'/><line x1='21' y1='21' x2='16.65' y2='16.65'/></svg>
+    <input id="catSearch" type="text" placeholder="Find a category…" data-i18n-placeholder="search_placeholder" oninput="filterChips(this.value)" aria-label="Search categories">
+  </div>
+  <div class="filter-scroll">
+    <button class="chip-arrow chip-prev" onclick="scrollChips(-1)" aria-label="Scroll left">‹</button>
+    <div class="chip-rail" id="chipRail">
+      <a href="gallery.html" class="chip" data-cat="all"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='3' width='18' height='18' rx='2'/><line x1='3' y1='9' x2='21' y2='9'/><line x1='3' y1='15' x2='21' y2='15'/><line x1='9' y1='3' x2='9' y2='21'/></svg><span data-i18n="filter_all">All</span></a>
+      <a href="gallery_favorites.html" class="chip" data-cat="favorites"><span style="font-size:1.1em">♥</span><span data-i18n="nav_favorites">Favorites</span></a>
+      <a href="gallery_kitchencabinetwood.html" class="chip" data-cat="kitchencabinetwood" data-name="kitchen cabinet wood"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='3' width='18' height='18' rx='2'/><line x1='3' y1='9' x2='21' y2='9'/><line x1='3' y1='15' x2='21' y2='15'/><line x1='9' y1='3' x2='9' y2='21'/></svg><span>Kitchen Cabinet Wood</span></a>
+      <a href="gallery_aluminumwindows.html" class="chip active" data-cat="aluminumwindows" data-name="aluminum windows"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='16' rx='1'/><line x1='12' y1='4' x2='12' y2='20'/><line x1='3' y1='12' x2='21' y2='12'/></svg><span>Aluminum Windows</span></a>
+      <a href="gallery_doors.html" class="chip" data-cat="doors" data-name="doors"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M6 21V3h12v18'/><circle cx='15' cy='12' r='1.2'/></svg><span>Doors</span></a>
+      <a href="gallery_decorations.html" class="chip" data-cat="decorations" data-name="decorations"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9'/><path d='M12 3a9 9 0 0 0 0 18'/><path d='M3 12h18'/></svg><span>Decorations</span></a>
+      <a href="gallery_soffitawning.html" class="chip" data-cat="soffitawning" data-name="soffit / awning"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 9l9-5 9 5'/><path d='M5 9v10h14V9'/><path d='M9 19v-6h6v6'/></svg><span>Soffit / Awning</span></a>
+      <a href="gallery_dressingrooms.html" class="chip" data-cat="dressingrooms" data-name="dressing rooms"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='3' width='7' height='18' rx='1'/><rect x='13' y='3' width='7' height='18' rx='1'/><circle cx='11' cy='12' r='1'/><circle cx='13' cy='12' r='1'/></svg><span>Dressing Rooms</span></a>
+    </div>
+    <button class="chip-arrow chip-next" onclick="scrollChips(1)" aria-label="Scroll right">›</button>
+  </div>
 </div>
 <div class="gallery-grid">
 
-      <div class="gallery-item AluminumWindows show">
+      <div class="gallery-item AluminumWindows show" data-tags="">
         <div class="card" onclick="lbOpen('AW-001.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/AW-001.jpg" srcset="media/w480/AW-001.jpg 480w, media/w800/AW-001.jpg 800w, media/w1200/AW-001.jpg 1200w, media/w1920/AW-001.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Katy Dismukes _ Custom Home Build Page on Instagram_ _Dining room transformation 👏🏻👏🏻 I’m picturing adding dark velvet curtains and a light oak dining table to complete the look_ Ahhh! I can’t wait! #dining #diningro" loading="lazy" decoding="async">
@@ -85,13 +95,13 @@
               <button class="share-btn" onclick="shareImg('AW-001.jpg', 'Katy Dismukes _ Custom Home Build Page on Instagram_ _Dining room transformation 👏🏻👏🏻 I’m picturing adding dark velvet curtains and a light oak dining table to complete the look_ Ahhh! I can’t wait! #dining #diningro', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('AW-001', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('AW-001', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item AluminumWindows show">
+      <div class="gallery-item AluminumWindows show" data-tags="">
         <div class="card" onclick="lbOpen('AW-002.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/AW-002.jpg" srcset="media/w480/AW-002.jpg 480w, media/w800/AW-002.jpg 800w, media/w1200/AW-002.jpg 1200w, media/w1920/AW-002.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Modern Window Design Ideas for Home" loading="lazy" decoding="async">
@@ -102,13 +112,13 @@
               <button class="share-btn" onclick="shareImg('AW-002.jpg', 'Modern Window Design Ideas for Home', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('AW-002', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('AW-002', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item AluminumWindows show">
+      <div class="gallery-item AluminumWindows show" data-tags="">
         <div class="card" onclick="lbOpen('AW-003.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/AW-003.jpg" srcset="media/w480/AW-003.jpg 480w, media/w800/AW-003.jpg 800w, media/w1200/AW-003.jpg 1200w, media/w1920/AW-003.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="natural light window background" loading="lazy" decoding="async">
@@ -119,13 +129,13 @@
               <button class="share-btn" onclick="shareImg('AW-003.jpg', 'natural light window background', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('AW-003', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('AW-003', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item AluminumWindows show">
+      <div class="gallery-item AluminumWindows show" data-tags="">
         <div class="card" onclick="lbOpen('AW-004.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/AW-004.jpg" srcset="media/w480/AW-004.jpg 480w, media/w800/AW-004.jpg 800w, media/w1200/AW-004.jpg 1200w, media/w1920/AW-004.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Steel Windows_ Strength, Style, and Timeless Appeal" loading="lazy" decoding="async">
@@ -136,13 +146,13 @@
               <button class="share-btn" onclick="shareImg('AW-004.jpg', 'Steel Windows_ Strength, Style, and Timeless Appeal', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('AW-004', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('AW-004', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item AluminumWindows show">
+      <div class="gallery-item AluminumWindows show" data-tags="">
         <div class="card" onclick="lbOpen('AW-005.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/AW-005.jpg" srcset="media/w480/AW-005.jpg 480w, media/w800/AW-005.jpg 800w, media/w1200/AW-005.jpg 1200w, media/w1920/AW-005.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Villa Home Windows Manual New Design Double Glazing French Swing Window Metal Framed Thermal Break" loading="lazy" decoding="async">
@@ -153,13 +163,13 @@
               <button class="share-btn" onclick="shareImg('AW-005.jpg', 'Villa Home Windows Manual New Design Double Glazing French Swing Window Metal Framed Thermal Break', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('AW-005', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('AW-005', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item AluminumWindows show">
+      <div class="gallery-item AluminumWindows show" data-tags="">
         <div class="card" onclick="lbOpen('AW-006.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/AW-006.jpg" srcset="media/w480/AW-006.jpg 480w, media/w800/AW-006.jpg 800w, media/w1200/AW-006.jpg 1200w, media/w1920/AW-006.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="#Bảng Báo Giá Cửa Nhôm Kính Cường Lực - Vách Ngăn Khung Nhôm" loading="lazy" decoding="async">
@@ -170,13 +180,13 @@
               <button class="share-btn" onclick="shareImg('AW-006.jpg', '#Bảng Báo Giá Cửa Nhôm Kính Cường Lực - Vách Ngăn Khung Nhôm', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('AW-006', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('AW-006', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item AluminumWindows show">
+      <div class="gallery-item AluminumWindows show" data-tags="">
         <div class="card" onclick="lbOpen('AW-007.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/AW-007.jpg" srcset="media/w480/AW-007.jpg 480w, media/w800/AW-007.jpg 800w, media/w1200/AW-007.jpg 1200w, media/w1920/AW-007.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="18+ Inspiring Square Window Trim Ideas" loading="lazy" decoding="async">
@@ -187,13 +197,13 @@
               <button class="share-btn" onclick="shareImg('AW-007.jpg', '18+ Inspiring Square Window Trim Ideas', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('AW-007', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('AW-007', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item AluminumWindows show">
+      <div class="gallery-item AluminumWindows show" data-tags="">
         <div class="card" onclick="lbOpen('AW-008.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/AW-008.jpg" srcset="media/w480/AW-008.jpg 480w, media/w800/AW-008.jpg 800w, media/w1200/AW-008.jpg 1200w, media/w1920/AW-008.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="19 Amazing Snake Plant In Entrance Ideas" loading="lazy" decoding="async">
@@ -204,13 +214,13 @@
               <button class="share-btn" onclick="shareImg('AW-008.jpg', '19 Amazing Snake Plant In Entrance Ideas', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('AW-008', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('AW-008', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item AluminumWindows show">
+      <div class="gallery-item AluminumWindows show" data-tags="">
         <div class="card" onclick="lbOpen('AW-009.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/AW-009.jpg" srcset="media/w480/AW-009.jpg 480w, media/w800/AW-009.jpg 800w, media/w1200/AW-009.jpg 1200w, media/w1920/AW-009.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="23+ Inspiring Picture Window Ideas for Your Home" loading="lazy" decoding="async">
@@ -221,13 +231,13 @@
               <button class="share-btn" onclick="shareImg('AW-009.jpg', '23+ Inspiring Picture Window Ideas for Your Home', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('AW-009', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('AW-009', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item AluminumWindows show">
+      <div class="gallery-item AluminumWindows show" data-tags="">
         <div class="card" onclick="lbOpen('AW-010.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/AW-010.jpg" srcset="media/w480/AW-010.jpg 480w, media/w800/AW-010.jpg 800w, media/w1200/AW-010.jpg 1200w, media/w1920/AW-010.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="30 Scandinavian Black Living Room Ideas for Chic___" loading="lazy" decoding="async">
@@ -238,13 +248,13 @@
               <button class="share-btn" onclick="shareImg('AW-010.jpg', '30 Scandinavian Black Living Room Ideas for Chic___', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('AW-010', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('AW-010', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item AluminumWindows show">
+      <div class="gallery-item AluminumWindows show" data-tags="">
         <div class="card" onclick="lbOpen('AW-011.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/AW-011.jpg" srcset="media/w480/AW-011.jpg 480w, media/w800/AW-011.jpg 800w, media/w1200/AW-011.jpg 1200w, media/w1920/AW-011.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Climadoor Part Q UPVC Sliding Patio Doors - Antracite Grey _ Express Doors Direct" loading="lazy" decoding="async">
@@ -255,13 +265,13 @@
               <button class="share-btn" onclick="shareImg('AW-011.jpg', 'Climadoor Part Q UPVC Sliding Patio Doors - Antracite Grey _ Express Doors Direct', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('AW-011', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('AW-011', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item AluminumWindows show">
+      <div class="gallery-item AluminumWindows show" data-tags="">
         <div class="card" onclick="lbOpen('AW-012.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/AW-012.jpg" srcset="media/w480/AW-012.jpg 480w, media/w800/AW-012.jpg 800w, media/w1200/AW-012.jpg 1200w, media/w1920/AW-012.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (1)" loading="lazy" decoding="async">
@@ -272,13 +282,13 @@
               <button class="share-btn" onclick="shareImg('AW-012.jpg', 'download (1)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('AW-012', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('AW-012', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item AluminumWindows show">
+      <div class="gallery-item AluminumWindows show" data-tags="">
         <div class="card" onclick="lbOpen('AW-013.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/AW-013.jpg" srcset="media/w480/AW-013.jpg 480w, media/w800/AW-013.jpg 800w, media/w1200/AW-013.jpg 1200w, media/w1920/AW-013.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (2)" loading="lazy" decoding="async">
@@ -289,13 +299,13 @@
               <button class="share-btn" onclick="shareImg('AW-013.jpg', 'download (2)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('AW-013', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('AW-013', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item AluminumWindows show">
+      <div class="gallery-item AluminumWindows show" data-tags="">
         <div class="card" onclick="lbOpen('AW-014.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/AW-014.jpg" srcset="media/w480/AW-014.jpg 480w, media/w800/AW-014.jpg 800w, media/w1200/AW-014.jpg 1200w, media/w1920/AW-014.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (3)" loading="lazy" decoding="async">
@@ -306,13 +316,13 @@
               <button class="share-btn" onclick="shareImg('AW-014.jpg', 'download (3)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('AW-014', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('AW-014', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item AluminumWindows show">
+      <div class="gallery-item AluminumWindows show" data-tags="">
         <div class="card" onclick="lbOpen('AW-015.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/AW-015.jpg" srcset="media/w480/AW-015.jpg 480w, media/w800/AW-015.jpg 800w, media/w1200/AW-015.jpg 1200w, media/w1920/AW-015.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (4)" loading="lazy" decoding="async">
@@ -323,13 +333,13 @@
               <button class="share-btn" onclick="shareImg('AW-015.jpg', 'download (4)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('AW-015', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('AW-015', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item AluminumWindows show">
+      <div class="gallery-item AluminumWindows show" data-tags="">
         <div class="card" onclick="lbOpen('AW-016.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/AW-016.jpg" srcset="media/w480/AW-016.jpg 480w, media/w800/AW-016.jpg 800w, media/w1200/AW-016.jpg 1200w, media/w1920/AW-016.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (5)" loading="lazy" decoding="async">
@@ -340,13 +350,13 @@
               <button class="share-btn" onclick="shareImg('AW-016.jpg', 'download (5)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('AW-016', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('AW-016', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item AluminumWindows show">
+      <div class="gallery-item AluminumWindows show" data-tags="">
         <div class="card" onclick="lbOpen('AW-017.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/AW-017.jpg" srcset="media/w480/AW-017.jpg 480w, media/w800/AW-017.jpg 800w, media/w1200/AW-017.jpg 1200w, media/w1920/AW-017.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (6)" loading="lazy" decoding="async">
@@ -357,13 +367,13 @@
               <button class="share-btn" onclick="shareImg('AW-017.jpg', 'download (6)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('AW-017', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('AW-017', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item AluminumWindows show">
+      <div class="gallery-item AluminumWindows show" data-tags="">
         <div class="card" onclick="lbOpen('AW-018.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/AW-018.jpg" srcset="media/w480/AW-018.jpg 480w, media/w800/AW-018.jpg 800w, media/w1200/AW-018.jpg 1200w, media/w1920/AW-018.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (7)" loading="lazy" decoding="async">
@@ -374,13 +384,13 @@
               <button class="share-btn" onclick="shareImg('AW-018.jpg', 'download (7)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('AW-018', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('AW-018', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item AluminumWindows show">
+      <div class="gallery-item AluminumWindows show" data-tags="">
         <div class="card" onclick="lbOpen('AW-019.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/AW-019.jpg" srcset="media/w480/AW-019.jpg 480w, media/w800/AW-019.jpg 800w, media/w1200/AW-019.jpg 1200w, media/w1920/AW-019.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (8)" loading="lazy" decoding="async">
@@ -391,13 +401,13 @@
               <button class="share-btn" onclick="shareImg('AW-019.jpg', 'download (8)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('AW-019', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('AW-019', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item AluminumWindows show">
+      <div class="gallery-item AluminumWindows show" data-tags="">
         <div class="card" onclick="lbOpen('AW-020.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/AW-020.jpg" srcset="media/w480/AW-020.jpg 480w, media/w800/AW-020.jpg 800w, media/w1200/AW-020.jpg 1200w, media/w1920/AW-020.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download" loading="lazy" decoding="async">
@@ -408,13 +418,13 @@
               <button class="share-btn" onclick="shareImg('AW-020.jpg', 'download', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('AW-020', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('AW-020', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item AluminumWindows show">
+      <div class="gallery-item AluminumWindows show" data-tags="">
         <div class="card" onclick="lbOpen('AW-021.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/AW-021.jpg" srcset="media/w480/AW-021.jpg 480w, media/w800/AW-021.jpg 800w, media/w1200/AW-021.jpg 1200w, media/w1920/AW-021.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Factory Coated Glass Window New Design Sliding Windows Slide Smoothly Waterproof and Soundproof" loading="lazy" decoding="async">
@@ -425,13 +435,13 @@
               <button class="share-btn" onclick="shareImg('AW-021.jpg', 'Factory Coated Glass Window New Design Sliding Windows Slide Smoothly Waterproof and Soundproof', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('AW-021', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('AW-021', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item AluminumWindows show">
+      <div class="gallery-item AluminumWindows show" data-tags="">
         <div class="card" onclick="lbOpen('AW-022.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/AW-022.jpg" srcset="media/w480/AW-022.jpg 480w, media/w800/AW-022.jpg 800w, media/w1200/AW-022.jpg 1200w, media/w1920/AW-022.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Incredible Range of Aluminium Windows by Al-Basira" loading="lazy" decoding="async">
@@ -442,13 +452,13 @@
               <button class="share-btn" onclick="shareImg('AW-022.jpg', 'Incredible Range of Aluminium Windows by Al-Basira', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('AW-022', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('AW-022', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item AluminumWindows show">
+      <div class="gallery-item AluminumWindows show" data-tags="">
         <div class="card" onclick="lbOpen('AW-023.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/AW-023.jpg" srcset="media/w480/AW-023.jpg 480w, media/w800/AW-023.jpg 800w, media/w1200/AW-023.jpg 1200w, media/w1920/AW-023.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Janela 4 folhas de vidro" loading="lazy" decoding="async">
@@ -459,7 +469,7 @@
               <button class="share-btn" onclick="shareImg('AW-023.jpg', 'Janela 4 folhas de vidro', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('AW-023', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('AW-023', event)">♡</button>
             </div>
           </div>
         </div>
@@ -560,8 +570,13 @@
       const favs = getFavs();
       document.querySelectorAll('.fav-btn').forEach(btn => {
         const match = btn.getAttribute('onclick').match(/'([^']+)'/);
-        if(match && favs.includes(match[1])) btn.classList.add('favorited');
-        else btn.classList.remove('favorited');
+        if(match && favs.includes(match[1])) {
+          btn.classList.add('favorited');
+          btn.textContent = '♥';
+        } else {
+          btn.classList.remove('favorited');
+          btn.textContent = '♡';
+        }
       });
     }
     function renderFavs() {
@@ -603,7 +618,7 @@
        
        const currentScrollY = window.scrollY;
        const nav = document.querySelector('.navbar');
-       const tabs = document.querySelector('.filter-tabs');
+       const tabs = document.querySelector('.filter-bar');
        if (currentScrollY > 100 && currentScrollY > lastScrollY) {
            if(nav) nav.classList.add('nav-hidden');
            if(tabs) tabs.classList.add('nav-hidden');
@@ -680,6 +695,31 @@
       const u = 'https://wa.me/?text=' + encodeURIComponent((text || '') + ' ' + url);
       window.open(u, '_blank');
     }
+
+    // ─── Filter bar: search chips + horizontal scroll + sub-feature filtering ─────
+    function filterChips(q) {
+      q = (q || '').trim().toLowerCase();
+      document.querySelectorAll('#chipRail .chip').forEach(c => {
+        const name = (c.getAttribute('data-name') || c.textContent || '').toLowerCase();
+        c.style.display = (!q || name.includes(q)) ? '' : 'none';
+      });
+    }
+    function scrollChips(dir) {
+      const rail = document.getElementById('chipRail');
+      if (rail) rail.scrollBy({ left: dir * 240, behavior: 'smooth' });
+    }
+    document.querySelectorAll('.subchip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.subchip').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const tag = (btn.getAttribute('data-tag') || '').toLowerCase();
+        document.querySelectorAll('.gallery-item').forEach(item => {
+          const tags = (item.getAttribute('data-tags') || '').toLowerCase();
+          const ok = !tag || tags.split(',').map(t => t.trim()).includes(tag);
+          item.style.display = ok ? '' : 'none';
+        });
+      });
+    });
   </script>
   <script src="translations.js"></script>
 </body></html>

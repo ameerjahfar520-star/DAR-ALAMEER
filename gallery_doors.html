@@ -16,7 +16,7 @@
   <meta name="twitter:image" content="https://ameerjahfar520-star.github.io/DAR-ALAMEER/icon-512.png">
   <script type="application/ld+json">{  "@context": "https://schema.org",  "@type": "LocalBusiness",  "name": "Dar Al Ameer Factory",  "image": "https://ameerjahfar520-star.github.io/DAR-ALAMEER/icon-512.png",  "url": "https://ameerjahfar520-star.github.io/DAR-ALAMEER/index.html",  "email": "dar.alameer2004@gmail.com",  "telephone": "07504532559",    "sameAs": [                "https://ameerjahfar520-star.github.io/DAR-ALAMEER/"  ]}</script>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=639218299717331714">
+  <link rel="stylesheet" href="styles.css?v=639218322591810204">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icon-512.png">
   <link rel="icon" sizes="512x512" href="icon-512.png">
@@ -41,9 +41,9 @@
         <span data-i18n="nav_share">Share</span>
       </button>
       <button onclick="toggleTheme()" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;" title="Toggle light/dark">🌓</button>
-      <button onclick="setLanguage('en')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">EN</button>
-      <button onclick="setLanguage('ar')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">AR</button>
-      <button onclick="setLanguage('ku')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">KU</button>
+      <button class="lang-btn" data-lang="en" onclick="setLanguage('en')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">EN</button>
+      <button class="lang-btn" data-lang="ar" onclick="setLanguage('ar')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">AR</button>
+      <button class="lang-btn" data-lang="ku" onclick="setLanguage('ku')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;">KU</button>
     </li>
   </ul>
 </nav>
@@ -62,19 +62,29 @@
 
   <div class="container" style="padding-top: 100px; padding-bottom: 80px;">
     <h1 class="section-title" data-i18n="nav_gallery">Our Portfolio</h1>
-    <div class="filter-tabs">
-  <a href="gallery.html" class="tab-btn" data-i18n="filter_all">All Projects</a>
-  <a href="gallery_favorites.html" class="tab-btn">&#x2764; Favorites</a>
-  <a href="gallery_kitchencabinetwood.html" class="tab-btn" data-i18n="category_KitchenCabinetWood">Kitchen Cabinet Wood</a>
-  <a href="gallery_aluminumwindows.html" class="tab-btn" data-i18n="category_AluminumWindows">Aluminum Windows</a>
-  <a href="gallery_doors.html" class="tab-btn active" data-i18n="category_Doors">Doors</a>
-  <a href="gallery_decorations.html" class="tab-btn" data-i18n="category_Decorations">Decorations</a>
-  <a href="gallery_soffitawning.html" class="tab-btn" data-i18n="category_SoffitAwning">Soffit / Awning</a>
-  <a href="gallery_dressingrooms.html" class="tab-btn" data-i18n="category_DressingRooms">Dressing Rooms</a>
+    <div class="filter-bar">
+  <div class="filter-search">
+    <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='7'/><line x1='21' y1='21' x2='16.65' y2='16.65'/></svg>
+    <input id="catSearch" type="text" placeholder="Find a category…" data-i18n-placeholder="search_placeholder" oninput="filterChips(this.value)" aria-label="Search categories">
+  </div>
+  <div class="filter-scroll">
+    <button class="chip-arrow chip-prev" onclick="scrollChips(-1)" aria-label="Scroll left">‹</button>
+    <div class="chip-rail" id="chipRail">
+      <a href="gallery.html" class="chip" data-cat="all"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='3' width='18' height='18' rx='2'/><line x1='3' y1='9' x2='21' y2='9'/><line x1='3' y1='15' x2='21' y2='15'/><line x1='9' y1='3' x2='9' y2='21'/></svg><span data-i18n="filter_all">All</span></a>
+      <a href="gallery_favorites.html" class="chip" data-cat="favorites"><span style="font-size:1.1em">♥</span><span data-i18n="nav_favorites">Favorites</span></a>
+      <a href="gallery_kitchencabinetwood.html" class="chip" data-cat="kitchencabinetwood" data-name="kitchen cabinet wood"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='3' width='18' height='18' rx='2'/><line x1='3' y1='9' x2='21' y2='9'/><line x1='3' y1='15' x2='21' y2='15'/><line x1='9' y1='3' x2='9' y2='21'/></svg><span>Kitchen Cabinet Wood</span></a>
+      <a href="gallery_aluminumwindows.html" class="chip" data-cat="aluminumwindows" data-name="aluminum windows"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='16' rx='1'/><line x1='12' y1='4' x2='12' y2='20'/><line x1='3' y1='12' x2='21' y2='12'/></svg><span>Aluminum Windows</span></a>
+      <a href="gallery_doors.html" class="chip active" data-cat="doors" data-name="doors"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M6 21V3h12v18'/><circle cx='15' cy='12' r='1.2'/></svg><span>Doors</span></a>
+      <a href="gallery_decorations.html" class="chip" data-cat="decorations" data-name="decorations"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9'/><path d='M12 3a9 9 0 0 0 0 18'/><path d='M3 12h18'/></svg><span>Decorations</span></a>
+      <a href="gallery_soffitawning.html" class="chip" data-cat="soffitawning" data-name="soffit / awning"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 9l9-5 9 5'/><path d='M5 9v10h14V9'/><path d='M9 19v-6h6v6'/></svg><span>Soffit / Awning</span></a>
+      <a href="gallery_dressingrooms.html" class="chip" data-cat="dressingrooms" data-name="dressing rooms"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='3' width='7' height='18' rx='1'/><rect x='13' y='3' width='7' height='18' rx='1'/><circle cx='11' cy='12' r='1'/><circle cx='13' cy='12' r='1'/></svg><span>Dressing Rooms</span></a>
+    </div>
+    <button class="chip-arrow chip-next" onclick="scrollChips(1)" aria-label="Scroll right">›</button>
+  </div>
 </div>
 <div class="gallery-grid">
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-001.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-001.jpg" srcset="media/w480/DR-001.jpg 480w, media/w800/DR-001.jpg 800w, media/w1200/DR-001.jpg 1200w, media/w1920/DR-001.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="IMG_20230102_205618" loading="lazy" decoding="async">
@@ -85,13 +95,13 @@
               <button class="share-btn" onclick="shareImg('DR-001.jpg', 'IMG_20230102_205618', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-001', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-001', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-002.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-002.jpg" srcset="media/w480/DR-002.jpg 480w, media/w800/DR-002.jpg 800w, media/w1200/DR-002.jpg 1200w, media/w1920/DR-002.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="IMG_20230124_190632" loading="lazy" decoding="async">
@@ -102,13 +112,13 @@
               <button class="share-btn" onclick="shareImg('DR-002.jpg', 'IMG_20230124_190632', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-002', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-002', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-003.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-003.jpg" srcset="media/w480/DR-003.jpg 480w, media/w800/DR-003.jpg 800w, media/w1200/DR-003.jpg 1200w, media/w1920/DR-003.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="IMG_20230715_192645" loading="lazy" decoding="async">
@@ -119,13 +129,13 @@
               <button class="share-btn" onclick="shareImg('DR-003.jpg', 'IMG_20230715_192645', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-003', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-003', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-004.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-004.jpg" srcset="media/w480/DR-004.jpg 480w, media/w800/DR-004.jpg 800w, media/w1200/DR-004.jpg 1200w, media/w1920/DR-004.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="IMG_20230726_143806" loading="lazy" decoding="async">
@@ -136,13 +146,13 @@
               <button class="share-btn" onclick="shareImg('DR-004.jpg', 'IMG_20230726_143806', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-004', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-004', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-007.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-007.jpg" srcset="media/w480/DR-007.jpg 480w, media/w800/DR-007.jpg 800w, media/w1200/DR-007.jpg 1200w, media/w1920/DR-007.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="IMG_20230916_003551" loading="lazy" decoding="async">
@@ -153,13 +163,13 @@
               <button class="share-btn" onclick="shareImg('DR-007.jpg', 'IMG_20230916_003551', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-007', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-007', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-008.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-008.jpg" srcset="media/w480/DR-008.jpg 480w, media/w800/DR-008.jpg 800w, media/w1200/DR-008.jpg 1200w, media/w1920/DR-008.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="IMG_20231122_200306" loading="lazy" decoding="async">
@@ -170,13 +180,13 @@
               <button class="share-btn" onclick="shareImg('DR-008.jpg', 'IMG_20231122_200306', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-008', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-008', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-009.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-009.jpg" srcset="media/w480/DR-009.jpg 480w, media/w800/DR-009.jpg 800w, media/w1200/DR-009.jpg 1200w, media/w1920/DR-009.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="ai-generated-modern-styled-entryway" loading="lazy" decoding="async">
@@ -187,13 +197,13 @@
               <button class="share-btn" onclick="shareImg('DR-009.jpg', 'ai-generated-modern-styled-entryway', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-009', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-009', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-010.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-010.jpg" srcset="media/w480/DR-010.jpg 480w, media/w800/DR-010.jpg 800w, media/w1200/DR-010.jpg 1200w, media/w1920/DR-010.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="decorated-front-door-with-plant (1)" loading="lazy" decoding="async">
@@ -204,13 +214,13 @@
               <button class="share-btn" onclick="shareImg('DR-010.jpg', 'decorated-front-door-with-plant (1)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-010', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-010', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-011.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-011.jpg" srcset="media/w480/DR-011.jpg 480w, media/w800/DR-011.jpg 800w, media/w1200/DR-011.jpg 1200w, media/w1920/DR-011.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="IMG_20210812_195848" loading="lazy" decoding="async">
@@ -221,13 +231,13 @@
               <button class="share-btn" onclick="shareImg('DR-011.jpg', 'IMG_20210812_195848', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-011', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-011', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-012.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-012.jpg" srcset="media/w480/DR-012.jpg 480w, media/w800/DR-012.jpg 800w, media/w1200/DR-012.jpg 1200w, media/w1920/DR-012.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="IMG_20211223_184314" loading="lazy" decoding="async">
@@ -238,13 +248,13 @@
               <button class="share-btn" onclick="shareImg('DR-012.jpg', 'IMG_20211223_184314', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-012', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-012', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-013.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-013.jpg" srcset="media/w480/DR-013.jpg 480w, media/w800/DR-013.jpg 800w, media/w1200/DR-013.jpg 1200w, media/w1920/DR-013.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="IMG_20220927_171105" loading="lazy" decoding="async">
@@ -255,13 +265,13 @@
               <button class="share-btn" onclick="shareImg('DR-013.jpg', 'IMG_20220927_171105', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-013', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-013', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-014.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-014.jpg" srcset="media/w480/DR-014.jpg 480w, media/w800/DR-014.jpg 800w, media/w1200/DR-014.jpg 1200w, media/w1920/DR-014.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="IMG_20220927_171128" loading="lazy" decoding="async">
@@ -272,13 +282,13 @@
               <button class="share-btn" onclick="shareImg('DR-014.jpg', 'IMG_20220927_171128', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-014', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-014', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-015.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-015.jpg" srcset="media/w480/DR-015.jpg 480w, media/w800/DR-015.jpg 800w, media/w1200/DR-015.jpg 1200w, media/w1920/DR-015.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="IMG_20220927_171910" loading="lazy" decoding="async">
@@ -289,13 +299,13 @@
               <button class="share-btn" onclick="shareImg('DR-015.jpg', 'IMG_20220927_171910', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-015', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-015', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-016.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-016.jpg" srcset="media/w480/DR-016.jpg 480w, media/w800/DR-016.jpg 800w, media/w1200/DR-016.jpg 1200w, media/w1920/DR-016.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="IMG_20221228_153941" loading="lazy" decoding="async">
@@ -306,13 +316,13 @@
               <button class="share-btn" onclick="shareImg('DR-016.jpg', 'IMG_20221228_153941', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-016', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-016', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-017.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-017.jpg" srcset="media/w480/DR-017.jpg 480w, media/w800/DR-017.jpg 800w, media/w1200/DR-017.jpg 1200w, media/w1920/DR-017.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="IMG_20221228_214840" loading="lazy" decoding="async">
@@ -323,13 +333,13 @@
               <button class="share-btn" onclick="shareImg('DR-017.jpg', 'IMG_20221228_214840', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-017', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-017', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-018.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-018.jpg" srcset="media/w480/DR-018.jpg 480w, media/w800/DR-018.jpg 800w, media/w1200/DR-018.jpg 1200w, media/w1920/DR-018.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="IMG_20230102_205458" loading="lazy" decoding="async">
@@ -340,13 +350,13 @@
               <button class="share-btn" onclick="shareImg('DR-018.jpg', 'IMG_20230102_205458', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-018', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-018', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-019.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-019.jpg" srcset="media/w480/DR-019.jpg 480w, media/w800/DR-019.jpg 800w, media/w1200/DR-019.jpg 1200w, media/w1920/DR-019.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Puerta principal de aluminio" loading="lazy" decoding="async">
@@ -357,13 +367,13 @@
               <button class="share-btn" onclick="shareImg('DR-019.jpg', 'Puerta principal de aluminio', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-019', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-019', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-020.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-020.jpg" srcset="media/w480/DR-020.jpg 480w, media/w800/DR-020.jpg 800w, media/w1200/DR-020.jpg 1200w, media/w1920/DR-020.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Алюминиевая дверь входная" loading="lazy" decoding="async">
@@ -374,13 +384,13 @@
               <button class="share-btn" onclick="shareImg('DR-020.jpg', 'Алюминиевая дверь входная', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-020', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-020', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-021.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-021.jpg" srcset="media/w480/DR-021.jpg 480w, media/w800/DR-021.jpg 800w, media/w1200/DR-021.jpg 1200w, media/w1920/DR-021.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Вхідні Двері Металопластикові Вінниця (067) 236 19 40" loading="lazy" decoding="async">
@@ -391,13 +401,13 @@
               <button class="share-btn" onclick="shareImg('DR-021.jpg', 'Вхідні Двері Металопластикові Вінниця (067) 236 19 40', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-021', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-021', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-022.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-022.jpg" srcset="media/w480/DR-022.jpg 480w, media/w800/DR-022.jpg 800w, media/w1200/DR-022.jpg 1200w, media/w1920/DR-022.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Двері вхідні" loading="lazy" decoding="async">
@@ -408,13 +418,13 @@
               <button class="share-btn" onclick="shareImg('DR-022.jpg', 'Двері вхідні', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-022', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-022', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-023.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-023.jpg" srcset="media/w480/DR-023.jpg 480w, media/w800/DR-023.jpg 800w, media/w1200/DR-023.jpg 1200w, media/w1920/DR-023.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="تفصيل وتوريد جميع أعمال المنيوم والزجاج" loading="lazy" decoding="async">
@@ -425,13 +435,13 @@
               <button class="share-btn" onclick="shareImg('DR-023.jpg', 'تفصيل وتوريد جميع أعمال المنيوم والزجاج', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-023', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-023', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-024.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-024.jpg" srcset="media/w480/DR-024.jpg 480w, media/w800/DR-024.jpg 800w, media/w1200/DR-024.jpg 1200w, media/w1920/DR-024.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="#aluminiumdoors" loading="lazy" decoding="async">
@@ -442,13 +452,13 @@
               <button class="share-btn" onclick="shareImg('DR-024.jpg', '#aluminiumdoors', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-024', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-024', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-025.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-025.jpg" srcset="media/w480/DR-025.jpg 480w, media/w800/DR-025.jpg 800w, media/w1200/DR-025.jpg 1200w, media/w1920/DR-025.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="#Bảng Báo Giá Cửa Nhôm Kính Cường Lực - Vách Ngăn Khung Nhôm (1)" loading="lazy" decoding="async">
@@ -459,13 +469,13 @@
               <button class="share-btn" onclick="shareImg('DR-025.jpg', '#Bảng Báo Giá Cửa Nhôm Kính Cường Lực - Vách Ngăn Khung Nhôm (1)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-025', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-025', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-026.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-026.jpg" srcset="media/w480/DR-026.jpg 480w, media/w800/DR-026.jpg 800w, media/w1200/DR-026.jpg 1200w, media/w1920/DR-026.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="#Bảng Báo Giá Cửa Nhôm Kính Cường Lực - Vách Ngăn Khung Nhôm" loading="lazy" decoding="async">
@@ -476,13 +486,13 @@
               <button class="share-btn" onclick="shareImg('DR-026.jpg', '#Bảng Báo Giá Cửa Nhôm Kính Cường Lực - Vách Ngăn Khung Nhôm', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-026', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-026', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-027.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-027.jpg" srcset="media/w480/DR-027.jpg 480w, media/w800/DR-027.jpg 800w, media/w1200/DR-027.jpg 1200w, media/w1920/DR-027.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Aluminium deurtrekkers op maat van jouw voordeur en gevel" loading="lazy" decoding="async">
@@ -493,13 +503,13 @@
               <button class="share-btn" onclick="shareImg('DR-027.jpg', 'Aluminium deurtrekkers op maat van jouw voordeur en gevel', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-027', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-027', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-028.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-028.jpg" srcset="media/w480/DR-028.jpg 480w, media/w800/DR-028.jpg 800w, media/w1200/DR-028.jpg 1200w, media/w1920/DR-028.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Aluprof MB-86 RAL 7016" loading="lazy" decoding="async">
@@ -510,13 +520,13 @@
               <button class="share-btn" onclick="shareImg('DR-028.jpg', 'Aluprof MB-86 RAL 7016', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-028', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-028', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-029.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-029.jpg" srcset="media/w480/DR-029.jpg 480w, media/w800/DR-029.jpg 800w, media/w1200/DR-029.jpg 1200w, media/w1920/DR-029.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="BẢNG BÁO GIÁ CỬA NHÔM XINGFA VIỆT NAM 2025" loading="lazy" decoding="async">
@@ -527,13 +537,13 @@
               <button class="share-btn" onclick="shareImg('DR-029.jpg', 'BẢNG BÁO GIÁ CỬA NHÔM XINGFA VIỆT NAM 2025', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-029', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-029', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-030.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-030.jpg" srcset="media/w480/DR-030.jpg 480w, media/w800/DR-030.jpg 800w, media/w1200/DR-030.jpg 1200w, media/w1920/DR-030.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Cửa nhôm kính phòng ngủ" loading="lazy" decoding="async">
@@ -544,13 +554,13 @@
               <button class="share-btn" onclick="shareImg('DR-030.jpg', 'Cửa nhôm kính phòng ngủ', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-030', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-030', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-031.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-031.jpg" srcset="media/w480/DR-031.jpg 480w, media/w800/DR-031.jpg 800w, media/w1200/DR-031.jpg 1200w, media/w1920/DR-031.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Cửa nhôm tiêu chuẩn Châu Âu" loading="lazy" decoding="async">
@@ -561,13 +571,13 @@
               <button class="share-btn" onclick="shareImg('DR-031.jpg', 'Cửa nhôm tiêu chuẩn Châu Âu', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-031', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-031', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-032.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-032.jpg" srcset="media/w480/DR-032.jpg 480w, media/w800/DR-032.jpg 800w, media/w1200/DR-032.jpg 1200w, media/w1920/DR-032.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Deur in kunststof en aluminium, MATO" loading="lazy" decoding="async">
@@ -578,13 +588,13 @@
               <button class="share-btn" onclick="shareImg('DR-032.jpg', 'Deur in kunststof en aluminium, MATO', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-032', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-032', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-033.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-033.jpg" srcset="media/w480/DR-033.jpg 480w, media/w800/DR-033.jpg 800w, media/w1200/DR-033.jpg 1200w, media/w1920/DR-033.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Dit is de voordeur" loading="lazy" decoding="async">
@@ -595,13 +605,13 @@
               <button class="share-btn" onclick="shareImg('DR-033.jpg', 'Dit is de voordeur', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-033', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-033', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-034.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-034.jpg" srcset="media/w480/DR-034.jpg 480w, media/w800/DR-034.jpg 800w, media/w1200/DR-034.jpg 1200w, media/w1920/DR-034.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (1)" loading="lazy" decoding="async">
@@ -612,13 +622,13 @@
               <button class="share-btn" onclick="shareImg('DR-034.jpg', 'download (1)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-034', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-034', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-035.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-035.jpg" srcset="media/w480/DR-035.jpg 480w, media/w800/DR-035.jpg 800w, media/w1200/DR-035.jpg 1200w, media/w1920/DR-035.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (2)" loading="lazy" decoding="async">
@@ -629,13 +639,13 @@
               <button class="share-btn" onclick="shareImg('DR-035.jpg', 'download (2)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-035', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-035', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-036.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-036.jpg" srcset="media/w480/DR-036.jpg 480w, media/w800/DR-036.jpg 800w, media/w1200/DR-036.jpg 1200w, media/w1920/DR-036.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (3)" loading="lazy" decoding="async">
@@ -646,13 +656,13 @@
               <button class="share-btn" onclick="shareImg('DR-036.jpg', 'download (3)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-036', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-036', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-037.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-037.jpg" srcset="media/w480/DR-037.jpg 480w, media/w800/DR-037.jpg 800w, media/w1200/DR-037.jpg 1200w, media/w1920/DR-037.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (4)" loading="lazy" decoding="async">
@@ -663,13 +673,13 @@
               <button class="share-btn" onclick="shareImg('DR-037.jpg', 'download (4)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-037', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-037', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-038.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-038.jpg" srcset="media/w480/DR-038.jpg 480w, media/w800/DR-038.jpg 800w, media/w1200/DR-038.jpg 1200w, media/w1920/DR-038.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (5)" loading="lazy" decoding="async">
@@ -680,13 +690,13 @@
               <button class="share-btn" onclick="shareImg('DR-038.jpg', 'download (5)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-038', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-038', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-039.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-039.jpg" srcset="media/w480/DR-039.jpg 480w, media/w800/DR-039.jpg 800w, media/w1200/DR-039.jpg 1200w, media/w1920/DR-039.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (6)" loading="lazy" decoding="async">
@@ -697,13 +707,13 @@
               <button class="share-btn" onclick="shareImg('DR-039.jpg', 'download (6)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-039', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-039', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-040.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-040.jpg" srcset="media/w480/DR-040.jpg 480w, media/w800/DR-040.jpg 800w, media/w1200/DR-040.jpg 1200w, media/w1920/DR-040.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (7)" loading="lazy" decoding="async">
@@ -714,13 +724,13 @@
               <button class="share-btn" onclick="shareImg('DR-040.jpg', 'download (7)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-040', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-040', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-041.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-041.jpg" srcset="media/w480/DR-041.jpg 480w, media/w800/DR-041.jpg 800w, media/w1200/DR-041.jpg 1200w, media/w1920/DR-041.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (8)" loading="lazy" decoding="async">
@@ -731,13 +741,13 @@
               <button class="share-btn" onclick="shareImg('DR-041.jpg', 'download (8)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-041', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-041', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-042.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-042.jpg" srcset="media/w480/DR-042.jpg 480w, media/w800/DR-042.jpg 800w, media/w1200/DR-042.jpg 1200w, media/w1920/DR-042.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (9)" loading="lazy" decoding="async">
@@ -748,13 +758,13 @@
               <button class="share-btn" onclick="shareImg('DR-042.jpg', 'download (9)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-042', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-042', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-043.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-043.jpg" srcset="media/w480/DR-043.jpg 480w, media/w800/DR-043.jpg 800w, media/w1200/DR-043.jpg 1200w, media/w1920/DR-043.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (10)" loading="lazy" decoding="async">
@@ -765,13 +775,13 @@
               <button class="share-btn" onclick="shareImg('DR-043.jpg', 'download (10)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-043', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-043', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-044.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-044.jpg" srcset="media/w480/DR-044.jpg 480w, media/w800/DR-044.jpg 800w, media/w1200/DR-044.jpg 1200w, media/w1920/DR-044.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (11)" loading="lazy" decoding="async">
@@ -782,13 +792,13 @@
               <button class="share-btn" onclick="shareImg('DR-044.jpg', 'download (11)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-044', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-044', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-045.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-045.jpg" srcset="media/w480/DR-045.jpg 480w, media/w800/DR-045.jpg 800w, media/w1200/DR-045.jpg 1200w, media/w1920/DR-045.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (12)" loading="lazy" decoding="async">
@@ -799,13 +809,13 @@
               <button class="share-btn" onclick="shareImg('DR-045.jpg', 'download (12)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-045', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-045', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-046.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-046.jpg" srcset="media/w480/DR-046.jpg 480w, media/w800/DR-046.jpg 800w, media/w1200/DR-046.jpg 1200w, media/w1920/DR-046.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (13)" loading="lazy" decoding="async">
@@ -816,13 +826,13 @@
               <button class="share-btn" onclick="shareImg('DR-046.jpg', 'download (13)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-046', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-046', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-047.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-047.jpg" srcset="media/w480/DR-047.jpg 480w, media/w800/DR-047.jpg 800w, media/w1200/DR-047.jpg 1200w, media/w1920/DR-047.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (14)" loading="lazy" decoding="async">
@@ -833,13 +843,13 @@
               <button class="share-btn" onclick="shareImg('DR-047.jpg', 'download (14)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-047', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-047', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-048.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-048.jpg" srcset="media/w480/DR-048.jpg 480w, media/w800/DR-048.jpg 800w, media/w1200/DR-048.jpg 1200w, media/w1920/DR-048.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (15)" loading="lazy" decoding="async">
@@ -850,13 +860,13 @@
               <button class="share-btn" onclick="shareImg('DR-048.jpg', 'download (15)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-048', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-048', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-049.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-049.jpg" srcset="media/w480/DR-049.jpg 480w, media/w800/DR-049.jpg 800w, media/w1200/DR-049.jpg 1200w, media/w1920/DR-049.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (16)" loading="lazy" decoding="async">
@@ -867,13 +877,13 @@
               <button class="share-btn" onclick="shareImg('DR-049.jpg', 'download (16)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-049', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-049', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-050.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-050.jpg" srcset="media/w480/DR-050.jpg 480w, media/w800/DR-050.jpg 800w, media/w1200/DR-050.jpg 1200w, media/w1920/DR-050.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (17)" loading="lazy" decoding="async">
@@ -884,13 +894,13 @@
               <button class="share-btn" onclick="shareImg('DR-050.jpg', 'download (17)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-050', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-050', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-051.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-051.jpg" srcset="media/w480/DR-051.jpg 480w, media/w800/DR-051.jpg 800w, media/w1200/DR-051.jpg 1200w, media/w1920/DR-051.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download (18)" loading="lazy" decoding="async">
@@ -901,13 +911,13 @@
               <button class="share-btn" onclick="shareImg('DR-051.jpg', 'download (18)', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-051', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-051', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-052.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-052.jpg" srcset="media/w480/DR-052.jpg 480w, media/w800/DR-052.jpg 800w, media/w1200/DR-052.jpg 1200w, media/w1920/DR-052.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="download" loading="lazy" decoding="async">
@@ -918,13 +928,13 @@
               <button class="share-btn" onclick="shareImg('DR-052.jpg', 'download', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-052', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-052', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-053.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-053.jpg" srcset="media/w480/DR-053.jpg 480w, media/w800/DR-053.jpg 800w, media/w1200/DR-053.jpg 1200w, media/w1920/DR-053.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Facadedøre" loading="lazy" decoding="async">
@@ -935,13 +945,13 @@
               <button class="share-btn" onclick="shareImg('DR-053.jpg', 'Facadedøre', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-053', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-053', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-054.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-054.jpg" srcset="media/w480/DR-054.jpg 480w, media/w800/DR-054.jpg 800w, media/w1200/DR-054.jpg 1200w, media/w1920/DR-054.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Galerija" loading="lazy" decoding="async">
@@ -952,13 +962,13 @@
               <button class="share-btn" onclick="shareImg('DR-054.jpg', 'Galerija', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-054', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-054', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-055.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-055.jpg" srcset="media/w480/DR-055.jpg 480w, media/w800/DR-055.jpg 800w, media/w1200/DR-055.jpg 1200w, media/w1920/DR-055.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Installation de menuiseries en neuf ou en rénovation" loading="lazy" decoding="async">
@@ -969,13 +979,13 @@
               <button class="share-btn" onclick="shareImg('DR-055.jpg', 'Installation de menuiseries en neuf ou en rénovation', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-055', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-055', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-056.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-056.jpg" srcset="media/w480/DR-056.jpg 480w, media/w800/DR-056.jpg 800w, media/w1200/DR-056.jpg 1200w, media/w1920/DR-056.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Kunststof voordeur geplaatst door Qozijn_" loading="lazy" decoding="async">
@@ -986,13 +996,13 @@
               <button class="share-btn" onclick="shareImg('DR-056.jpg', 'Kunststof voordeur geplaatst door Qozijn_', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-056', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-056', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-057.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-057.jpg" srcset="media/w480/DR-057.jpg 480w, media/w800/DR-057.jpg 800w, media/w1200/DR-057.jpg 1200w, media/w1920/DR-057.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Le charme contemporain d&apos;une porte design" loading="lazy" decoding="async">
@@ -1003,13 +1013,13 @@
               <button class="share-btn" onclick="shareImg('DR-057.jpg', 'Le charme contemporain d&apos;une porte design', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-057', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-057', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-058.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-058.jpg" srcset="media/w480/DR-058.jpg 480w, media/w800/DR-058.jpg 800w, media/w1200/DR-058.jpg 1200w, media/w1920/DR-058.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Maxpro_JP Japan Aluminium" loading="lazy" decoding="async">
@@ -1020,13 +1030,13 @@
               <button class="share-btn" onclick="shareImg('DR-058.jpg', 'Maxpro_JP Japan Aluminium', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-058', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-058', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-059.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-059.jpg" srcset="media/w480/DR-059.jpg 480w, media/w800/DR-059.jpg 800w, media/w1200/DR-059.jpg 1200w, media/w1920/DR-059.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Nebeneingangstür nach Maß kaufen _ FertigFenster®" loading="lazy" decoding="async">
@@ -1037,13 +1047,13 @@
               <button class="share-btn" onclick="shareImg('DR-059.jpg', 'Nebeneingangstür nach Maß kaufen _ FertigFenster®', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-059', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-059', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-060.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-060.jpg" srcset="media/w480/DR-060.jpg 480w, media/w800/DR-060.jpg 800w, media/w1200/DR-060.jpg 1200w, media/w1920/DR-060.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Porte d’entrée en alu - sur mesure - Fabriquée en France" loading="lazy" decoding="async">
@@ -1054,13 +1064,13 @@
               <button class="share-btn" onclick="shareImg('DR-060.jpg', 'Porte d’entrée en alu - sur mesure - Fabriquée en France', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-060', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-060', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-061.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-061.jpg" srcset="media/w480/DR-061.jpg 480w, media/w800/DR-061.jpg 800w, media/w1200/DR-061.jpg 1200w, media/w1920/DR-061.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Puerta de alumino negro" loading="lazy" decoding="async">
@@ -1071,13 +1081,13 @@
               <button class="share-btn" onclick="shareImg('DR-061.jpg', 'Puerta de alumino negro', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-061', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-061', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-062.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-062.jpg" srcset="media/w480/DR-062.jpg 480w, media/w800/DR-062.jpg 800w, media/w1200/DR-062.jpg 1200w, media/w1920/DR-062.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="puerta de herrería" loading="lazy" decoding="async">
@@ -1088,13 +1098,13 @@
               <button class="share-btn" onclick="shareImg('DR-062.jpg', 'puerta de herrería', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-062', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-062', event)">♡</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item Doors show">
+      <div class="gallery-item Doors show" data-tags="">
         <div class="card" onclick="lbOpen('DR-063.jpg')">
           <div class="card-img-wrap">
             <img src="media/thumb/DR-063.jpg" srcset="media/w480/DR-063.jpg 480w, media/w800/DR-063.jpg 800w, media/w1200/DR-063.jpg 1200w, media/w1920/DR-063.jpg 1920w" sizes="(max-width: 768px) 100vw, 33vw" alt="Puerta ligera" loading="lazy" decoding="async">
@@ -1105,7 +1115,7 @@
               <button class="share-btn" onclick="shareImg('DR-063.jpg', 'Puerta ligera', event)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
               </button>
-              <button class="fav-btn" onclick="toggleFav('DR-063', event)">&#x2764;</button>
+              <button class="fav-btn" onclick="toggleFav('DR-063', event)">♡</button>
             </div>
           </div>
         </div>
@@ -1206,8 +1216,13 @@
       const favs = getFavs();
       document.querySelectorAll('.fav-btn').forEach(btn => {
         const match = btn.getAttribute('onclick').match(/'([^']+)'/);
-        if(match && favs.includes(match[1])) btn.classList.add('favorited');
-        else btn.classList.remove('favorited');
+        if(match && favs.includes(match[1])) {
+          btn.classList.add('favorited');
+          btn.textContent = '♥';
+        } else {
+          btn.classList.remove('favorited');
+          btn.textContent = '♡';
+        }
       });
     }
     function renderFavs() {
@@ -1249,7 +1264,7 @@
        
        const currentScrollY = window.scrollY;
        const nav = document.querySelector('.navbar');
-       const tabs = document.querySelector('.filter-tabs');
+       const tabs = document.querySelector('.filter-bar');
        if (currentScrollY > 100 && currentScrollY > lastScrollY) {
            if(nav) nav.classList.add('nav-hidden');
            if(tabs) tabs.classList.add('nav-hidden');
@@ -1326,6 +1341,31 @@
       const u = 'https://wa.me/?text=' + encodeURIComponent((text || '') + ' ' + url);
       window.open(u, '_blank');
     }
+
+    // ─── Filter bar: search chips + horizontal scroll + sub-feature filtering ─────
+    function filterChips(q) {
+      q = (q || '').trim().toLowerCase();
+      document.querySelectorAll('#chipRail .chip').forEach(c => {
+        const name = (c.getAttribute('data-name') || c.textContent || '').toLowerCase();
+        c.style.display = (!q || name.includes(q)) ? '' : 'none';
+      });
+    }
+    function scrollChips(dir) {
+      const rail = document.getElementById('chipRail');
+      if (rail) rail.scrollBy({ left: dir * 240, behavior: 'smooth' });
+    }
+    document.querySelectorAll('.subchip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.subchip').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const tag = (btn.getAttribute('data-tag') || '').toLowerCase();
+        document.querySelectorAll('.gallery-item').forEach(item => {
+          const tags = (item.getAttribute('data-tags') || '').toLowerCase();
+          const ok = !tag || tags.split(',').map(t => t.trim()).includes(tag);
+          item.style.display = ok ? '' : 'none';
+        });
+      });
+    });
   </script>
   <script src="translations.js"></script>
 </body></html>
