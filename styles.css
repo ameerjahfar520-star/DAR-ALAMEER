@@ -55,7 +55,11 @@ a { text-decoration: none; color: inherit; }
 .share-btn:hover { color: #3b82f6; transform: scale(1.1); }
 .nav-share-btn { display: inline-flex; align-items: center; gap: 6px; background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.4); color: #60a5fa; padding: 6px 14px; border-radius: 20px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-family: inherit; margin-left: 0.5rem; }
 .nav-share-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); box-shadow: 0 4px 12px var(--accent-glow); transform: translateY(-2px); }
-.lang-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.lang-group { display: inline-flex; align-items: center; background: rgba(255,255,255,0.06); border: 1px solid var(--border); border-radius: 28px; padding: 3px; gap: 2px; backdrop-filter: blur(8px); }
+.lang-btn { position: relative; background: transparent; border: none; color: var(--muted); padding: 6px 14px; border-radius: 24px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); font-family: inherit; letter-spacing: 0.02em; white-space: nowrap; }
+.lang-btn:hover { color: var(--text); background: rgba(255,255,255,0.08); }
+.lang-btn.active { background: var(--accent); color: #fff; box-shadow: 0 2px 12px var(--accent-glow); }
+.lang-btn .lang-native { font-size: 0.8rem; }
 .toast-msg { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px); background: rgba(15, 23, 42, 0.95); border: 1px solid var(--accent); color: #fff; padding: 12px 24px; border-radius: 30px; font-size: 0.95rem; font-weight: 500; z-index: 10000; opacity: 0; pointer-events: none; transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); box-shadow: 0 10px 25px rgba(0,0,0,0.5); display: flex; align-items: center; gap: 8px; backdrop-filter: blur(8px); }
 .toast-msg.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 .site-watermark { position: fixed; bottom: 20px; left: 20px; width: 120px; opacity: 0.4; pointer-events: none; z-index: 50; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5)); }
